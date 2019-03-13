@@ -1,6 +1,6 @@
 function rootReducer(
   state = {
-    loggedIn: localStorage.username
+    loggedIn: localStorage.username || null
   },
   action
 ) {
