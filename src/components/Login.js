@@ -10,6 +10,7 @@ class Login extends Component{
   }
 
   handleSubmit = (event) => {
+    localStorage.username = this.state.username
     login(this.state.username, this.state.password)
       .then(data => localStorage.token = data.token)
 

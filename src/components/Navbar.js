@@ -6,11 +6,13 @@ const logInOut = () => {
   if (localStorage.token) {
     return (
       <Menu.Item
-        name='profile'
+        name=''
         color={'violet'}
         active={false}
         onClick={null}
-      />
+      >
+        {localStorage.username}
+      </Menu.Item>
     )
   } else {
     return(
