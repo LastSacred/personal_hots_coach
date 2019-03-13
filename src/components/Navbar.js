@@ -1,16 +1,43 @@
 import React from 'react'
 import { Menu } from 'semantic-ui-react'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
+
+const logInOut = () => {
+  if (localStorage.token) {
+    return (
+      <Menu.Item
+        name='profile'
+        color={'violet'}
+        active={false}
+        onClick={null}
+      />
+    )
+  } else {
+    return(
+      <Link to='/login'>
+        <Menu.Item
+          name='login'
+          color={'violet'}
+          active={false}
+          onClick={null}
+        />
+      </Link>
+    )
+  }
+}
 
 const Navbar = (props) => {
   return(
     <Menu inverted>
        <Menu.Item header>Personal HotS Coach</Menu.Item>
-       <Menu.Item
-         name='home'
-         color={'violet'}
-         active={true}
-         onClick={null}
-       />
+       <Link to='/'>
+         <Menu.Item
+           name='home'
+           color={'violet'}
+           active={true}
+           onClick={null}
+         />
+        </Link>
        <Menu.Item
        name='draft'
        color={'violet'}
@@ -18,17 +45,14 @@ const Navbar = (props) => {
        onClick={null}
        />
        <Menu.Item
-         name='status'
+         name='stats'
          color={'violet'}
          active={false}
          onClick={null}
        />
-       <Menu.Item
-         name='profile'
-         color={'violet'}
-         active={false}
-         onClick={null}
-       />
+       <Menu.Menu position='right'>
+         {logInOut()}
+       </Menu.Menu>
      </Menu>
   )
 }
