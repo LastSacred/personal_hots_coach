@@ -1,9 +1,10 @@
 import React from 'react'
 import { Menu } from 'semantic-ui-react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-const logInOut = () => {
-  if (localStorage.token) {
+const logInOut = (props) => {
+  if (props.loggedIn) {
     return (
       <Menu.Item
         name=''
@@ -11,7 +12,7 @@ const logInOut = () => {
         active={false}
         onClick={null}
       >
-        {localStorage.username}
+        {props.loggedIn}
       </Menu.Item>
     )
   } else {
@@ -53,10 +54,25 @@ const Navbar = (props) => {
          onClick={null}
        />
        <Menu.Menu position='right'>
-         {logInOut()}
+         {logInOut(props)}
        </Menu.Menu>
      </Menu>
   )
 }
 
-export default Navbar
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.loggedIn
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Navbar)

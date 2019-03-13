@@ -1,6 +1,5 @@
 import { createStore } from 'redux'
 
-
 function rootReducer(
   state = {
     loggedIn: localStorage.username || null
@@ -8,8 +7,8 @@ function rootReducer(
   action
 ) {
   switch (action.type) {
-    case "expression":
-      return
+    case "LOGIN":
+      return { ...state, loggedIn: action.username }
     default:
       return state
   }

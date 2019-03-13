@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, Segment, Container } from 'semantic-ui-react'
+import { BrowserRouter as Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import { login } from '../services/backend'
 
@@ -10,11 +12,14 @@ class Login extends Component{
   }
 
   handleSubmit = (event) => {
-    localStorage.username = this.state.username
     login(this.state.username, this.state.password)
-      .then(data => localStorage.token = data.token)
-
-    this.setState({ username: '', password: ''})
+      .then(data => {
+        if (!data.token) return
+        localStorage.token = data.token
+        localStorage.username = this.state.username
+        this.props.login()
+        this.setState({ username: '', password: ''})
+      })
   }
 
   handleChange = (event) => {
@@ -23,9 +28,20 @@ class Login extends Component{
     })
   }
 
+  // navigate = () => {
+  //   if (this.props.loggedIn) {
+  //
+  //   } else {
+  //     return (
+  //
+  //     )
+  //   }
+  // }
+  // TODO: redirect to home after login
   render() {
     return(
       <Container>
+        {this.props.loggedIn ? <Redirect to="/" /> : null}
         <Segment compact raised color='violet'>
           <Form size='large' onSubmit={this.handleSubmit}>
             <Form.Field>
@@ -55,4 +71,19 @@ class Login extends Component{
   }
 }
 
-export default Login
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.loggedIn
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    login: () => dispatch({ type: 'LOGIN', username: localStorage.username})
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login)
