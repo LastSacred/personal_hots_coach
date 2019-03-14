@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import Maps from './Maps'
 import { connect } from 'react-redux'
 import { getMaps, getHeroes, postDraft } from '../services/backend'
+import { Container } from 'semantic-ui-react'
+
+import Maps from './Maps'
+import Heroes from './Heroes'
 
 
 class Draft extends Component {
@@ -31,7 +34,10 @@ class Draft extends Component {
 
   render() {
     return(
-      <Maps />
+      <Container>
+        <Maps />
+        <Heroes />
+      </Container>
     )
   }
 }
