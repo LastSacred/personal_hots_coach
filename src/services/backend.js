@@ -19,4 +19,21 @@ const getMaps = () => {
   return fetch(URL + 'maps').then(res => res.json())
 }
 
-export { login, getMaps }
+const getHeroes = () => {
+  return fetch(URL + 'heroes').then(res => res.json())
+}
+
+const postDraft = (draft) => {
+  return fetch(URL + 'drafts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Token': localStorage.token
+    },
+    body: JSON.stringify({
+      draft: draft
+    })
+  }).then(res => res.json())
+}
+
+export { login, getMaps, getHeroes, postDraft }

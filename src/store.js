@@ -1,5 +1,4 @@
 import { createStore } from 'redux'
-import { getMaps } from './services/backend'
 
 function rootReducer(
   state = {
@@ -8,12 +7,12 @@ function rootReducer(
     allMaps: [],
     allHeroes: [],
     draft: {
-      map: {},
+      map: '',
       bans: [],
       with_heroes: [],
-      against_heroes: [],
-      pick_list: []
-    }
+      against_heroes: []
+    },
+    pickList: []
   },
   action
 ) {
@@ -26,11 +25,13 @@ function rootReducer(
       const newPage = path[path.length - 1]
       return { ...state, page: newPage }
     case "UPDATE_MAPS":
-      return { ...state, maps: action.maps }
+      return { ...state, allMaps: action.maps }
     case "UPDATE_HEROES":
-      return state
+      return { ...state, allHeroes: action.heroes }
     case "UPDATE_DRAFT":
       return state
+    case "UPDATE_PICKLIST":
+      return { ...state, pickList: action.pickList }
     default:
       return state
   }
