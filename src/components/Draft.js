@@ -22,6 +22,13 @@ class Draft extends Component {
     }))
   }
 
+  componentDidUpdate() {
+    postDraft(this.props.draft).then(draft => this.props.dispatch({
+      type: 'UPDATE_PICKLIST',
+      pickList: draft.pick_list
+    }))
+  }
+
   render() {
     return(
       <Maps />

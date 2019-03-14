@@ -28,8 +28,8 @@ function rootReducer(
       return { ...state, allMaps: action.maps }
     case "UPDATE_HEROES":
       return { ...state, allHeroes: action.heroes }
-    case "UPDATE_DRAFT":
-      return state
+    case "UPDATE_DRAFT_MAP":
+      return { ...state, draft: { ...state.draft, map: action.map } }
     case "UPDATE_PICKLIST":
       return { ...state, pickList: action.pickList }
     default:
