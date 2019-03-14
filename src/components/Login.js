@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, Segment, Container } from 'semantic-ui-react'
-import { BrowserRouter as Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { login } from '../services/backend'
@@ -17,9 +17,10 @@ class Login extends Component{
         if (!data.token) return
         localStorage.token = data.token
         localStorage.username = this.state.username
-        this.props.login()
-        this.setState({ username: '', password: ''})
+        this.props.updateLogin()
       })
+      
+      this.setState({ username: '', password: ''})
   }
 
   handleChange = (event) => {
@@ -28,16 +29,6 @@ class Login extends Component{
     })
   }
 
-  // navigate = () => {
-  //   if (this.props.loggedIn) {
-  //
-  //   } else {
-  //     return (
-  //
-  //     )
-  //   }
-  // }
-  // TODO: redirect to home after login
   render() {
     return(
       <Container>
@@ -79,7 +70,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    login: () => dispatch({ type: 'LOGIN', username: localStorage.username})
+    updateLogin: () => dispatch({ type: 'UPDATE_LOGIN'})
   }
 }
 

@@ -6,14 +6,16 @@ import { connect } from 'react-redux'
 const logInOut = (props) => {
   if (props.loggedIn) {
     return (
-      <Menu.Item
-        name=''
-        color={'violet'}
-        active={false}
-        onClick={null}
-      >
-        {props.loggedIn}
-      </Menu.Item>
+      <Link to='/profile'>
+        <Menu.Item
+          name=''
+          color={'violet'}
+          active={props.page === 'profile'}
+          onClick={null}
+        >
+          {props.loggedIn}
+        </Menu.Item>
+      </Link>
     )
   } else {
     return(
@@ -21,7 +23,7 @@ const logInOut = (props) => {
         <Menu.Item
           name='login'
           color={'violet'}
-          active={false}
+          active={props.page === 'login'}
           onClick={null}
         />
       </Link>
@@ -32,27 +34,31 @@ const logInOut = (props) => {
 const Navbar = (props) => {
   return(
     <Menu inverted>
-       <Menu.Item header>Personal HotS Coach</Menu.Item>
+       <Menu.Item active={true} header>Personal HotS Coach</Menu.Item>
        <Link to='/'>
          <Menu.Item
            name='home'
            color={'violet'}
-           active={true}
+           active={props.page === ''}
            onClick={null}
          />
         </Link>
-       <Menu.Item
-       name='draft'
-       color={'violet'}
-       active={false}
-       onClick={null}
-       />
-       <Menu.Item
-         name='stats'
-         color={'violet'}
-         active={false}
-         onClick={null}
-       />
+       <Link to='/draft'>
+         <Menu.Item
+           name='draft'
+           color={'violet'}
+           active={props.page === 'draft'}
+           onClick={null}
+         />
+       </Link>
+       <Link to='/stats'>
+         <Menu.Item
+           name='stats'
+           color={'violet'}
+           active={props.page === 'stats'}
+           onClick={null}
+         />
+       </Link>
        <Menu.Menu position='right'>
          {logInOut(props)}
        </Menu.Menu>
@@ -62,7 +68,8 @@ const Navbar = (props) => {
 
 const mapStateToProps = state => {
   return {
-    loggedIn: state.loggedIn
+    loggedIn: state.loggedIn,
+    page: state.page
   }
 }
 

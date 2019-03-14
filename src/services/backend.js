@@ -15,4 +15,8 @@ const login = (username, password) => {
   }).then(res => res.json())
 }
 
-export { login }
+const getMaps = () => {
+  return fetch(URL + 'maps').then(res => res.json())
+}
+
+export { login, getMaps }
