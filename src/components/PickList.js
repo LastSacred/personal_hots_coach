@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container, Grid } from 'semantic-ui-react'
+import { Container, Grid, Segment } from 'semantic-ui-react'
 
 import Hero from './Hero'
 
@@ -12,10 +12,11 @@ const HeroesContainer = (props) => {
   }
 
   return(
-    <Grid.Row>
-      <h1>Your Picks</h1>
-      {showHeroes()}
-    </Grid.Row>
+    <Segment style={{overflow: 'auto', height: 140}}>
+      <Grid>
+        {showHeroes()}
+      </Grid>
+    </Segment>
   )
 }
 

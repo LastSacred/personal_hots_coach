@@ -12,7 +12,7 @@ const HeroesContainer = (props) => {
   }
 
   return(
-    <Segment style={{overflow: 'auto', maxHeight: 475, minHeight: 475}}>
+    <Segment style={{overflow: 'auto', height: 420}}>
       <Grid>
         {showHeroes()}
       </Grid>

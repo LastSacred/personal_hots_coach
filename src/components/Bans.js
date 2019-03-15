@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container, Grid } from 'semantic-ui-react'
+import { Container, Grid, Segment } from 'semantic-ui-react'
 
 import Hero from './Hero'
 
@@ -22,11 +22,16 @@ const Bans = (props) => {
   }
 
   return(
-      <Grid.Row columns={7}>
+      <Grid.Row columns={12}>
+        <Grid.Column />
+        <Grid.Column />
         <Grid.Column>
           <h1>Bans</h1>
         </Grid.Column>
         {showBans()}
+        <Grid.Column />
+        <Grid.Column />
+        <Grid.Column />
       </Grid.Row>
   )
 }

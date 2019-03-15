@@ -25,17 +25,17 @@ class Draft extends Component {
 
   render() {
     return(
-        <Grid celled>
+        <Grid>
         <Bans />
           <Grid.Row>
             <Team />
             <Grid.Column width={12}>
               <Maps />
               <Heroes />
+              <PickList />
             </Grid.Column>
             <Opponents />
           </Grid.Row>
-          <PickList />
         </Grid>
     )
   }
