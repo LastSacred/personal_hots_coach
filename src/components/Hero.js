@@ -28,7 +28,7 @@ const Hero = (props) => {
         break
       default:
     }
-    
+
     getHeroes().then(heroes => props.updateHeroes(heroes))
   }
 
@@ -74,6 +74,7 @@ const Hero = (props) => {
       {showButtons()}
       <div>{hero.name}</div>
       <div>{hero.role}</div>
+      {props.score ? <div>{props.score}</div> : null}
     </Container>
   )
 }

@@ -6,13 +6,14 @@ import Hero from './Hero'
 
 const HeroesContainer = (props) => {
   const showHeroes = () => {
-    return props.allHeroes.map(hero => {
-      return <Hero key={hero.id} hero={hero} parent={"HeroesContainer"} />
+    return props.pickList.map(heroObj => {
+      return <Hero key={heroObj.hero.id} hero={heroObj.hero} score={heroObj.score} parent={"PickList"} />
     })
   }
 
   return(
     <Container>
+      <h1>Your Picks</h1>
       {showHeroes()}
     </Container>
   )
@@ -20,7 +21,7 @@ const HeroesContainer = (props) => {
 
 const mapStateToProps = state => {
   return {
-    allHeroes: state.allHeroes
+    pickList: state.pickList
   }
 }
 

@@ -8,6 +8,7 @@ import Heroes from './Heroes'
 import Bans from './Bans'
 import Team from './Team'
 import Opponents from './Opponents'
+import PickList from './PickList'
 
 class Draft extends Component {
   componentDidMount() {
@@ -30,6 +31,7 @@ class Draft extends Component {
         <Opponents />
         <Maps />
         <Heroes />
+        <PickList />
       </Container>
     )
   }
