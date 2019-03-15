@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container, Image, Button } from 'semantic-ui-react'
+import { Container, Image, Button, Grid, Segment } from 'semantic-ui-react'
 
 import emptyIcon from '../assets/empty.jpg'
 import { getHeroes } from '../services/backend'
@@ -53,6 +53,7 @@ const Hero = (props) => {
 
   const showButtons = () => {
     if (hero.name !== props.selectedHero) return null
+    if (props.parent !== 'HeroesContainer') return null
 
     return (
       <Button.Group vertical onClick={handleButtonClick} >
@@ -64,8 +65,9 @@ const Hero = (props) => {
   }
 
   return(
-    <Container>
+    <div style={{minHeight: 125}}>
       <Image
+        style={{margin: 'auto'}}
         onClick={handleClick}
         src={hero.icon_url}
         size='tiny'
@@ -75,7 +77,7 @@ const Hero = (props) => {
       <div>{hero.name}</div>
       <div>{hero.role}</div>
       {props.score ? <div>{props.score}</div> : null}
-    </Container>
+    </div>
   )
 }
 

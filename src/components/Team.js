@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 
 import Hero from './Hero'
 
@@ -18,10 +18,10 @@ const Team = (props) => {
   }
 
   return(
-    <Container>
+    <Grid.Column width={2}>
       <h1>Team</h1>
       {showTeam()}
-    </Container>
+    </Grid.Column>
   )
 }
 

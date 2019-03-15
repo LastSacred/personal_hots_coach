@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getMaps, getHeroes, postDraft } from '../services/backend'
-import { Container } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 
 import Maps from './Maps'
 import Heroes from './Heroes'
@@ -25,14 +25,18 @@ class Draft extends Component {
 
   render() {
     return(
-      <Container>
+        <Grid celled>
         <Bans />
-        <Team />
-        <Opponents />
-        <Maps />
-        <Heroes />
-        <PickList />
-      </Container>
+          <Grid.Row>
+            <Team />
+            <Grid.Column width={12}>
+              <Maps />
+              <Heroes />
+            </Grid.Column>
+            <Opponents />
+          </Grid.Row>
+          <PickList />
+        </Grid>
     )
   }
 }

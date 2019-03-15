@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 
 import Hero from './Hero'
 
@@ -13,15 +13,21 @@ const Bans = (props) => {
     }
 
     return bans.map((hero, index) => {
-      return <Hero key={index} hero={hero} parent={"Bans"} />
+      return (
+        <Grid.Column>
+          <Hero key={index} hero={hero} parent={"Bans"} />
+        </Grid.Column>
+      )
     })
   }
 
   return(
-    <Container>
-      <h1>Bans</h1>
-      {showBans()}
-    </Container>
+      <Grid.Row columns={7}>
+        <Grid.Column>
+          <h1>Bans</h1>
+        </Grid.Column>
+        {showBans()}
+      </Grid.Row>
   )
 }
 

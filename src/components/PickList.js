@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 
 import Hero from './Hero'
 
@@ -12,10 +12,10 @@ const HeroesContainer = (props) => {
   }
 
   return(
-    <Container>
+    <Grid.Row>
       <h1>Your Picks</h1>
       {showHeroes()}
-    </Container>
+    </Grid.Row>
   )
 }
 

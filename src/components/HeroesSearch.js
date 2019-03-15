@@ -27,6 +27,7 @@ const HeroesSearch = (props) => {
       <Form>
         <Form.Field>
           <input
+            style={{maxWidth: 500, margin: 'auto'}}
             placeholder='Hero Name'
             onChange={(event) => handleChange(event, props)}
             value={props.filterValue}
