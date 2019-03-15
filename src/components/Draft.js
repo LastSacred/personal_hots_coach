@@ -6,7 +6,8 @@ import { Container } from 'semantic-ui-react'
 import Maps from './Maps'
 import Heroes from './Heroes'
 import Bans from './Bans'
-
+import Team from './Team'
+import Opponents from './Opponents'
 
 class Draft extends Component {
   componentDidMount() {
@@ -25,6 +26,8 @@ class Draft extends Component {
     return(
       <Container>
         <Bans />
+        <Team />
+        <Opponents />
         <Maps />
         <Heroes />
       </Container>
