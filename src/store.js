@@ -4,6 +4,7 @@ function rootReducer(
   state = {
     loggedIn: localStorage.username || null,
     page: '',
+    filterValue: '',
     allMaps: [],
     allHeroes: [],
     draft: {
@@ -25,6 +26,8 @@ function rootReducer(
       path = path.split('/')
       const newPage = path[path.length - 1]
       return { ...state, page: newPage }
+    case "UPDATE_FILTER_VALUE":
+      return { ...state, filterValue: action.value }
     case "UPDATE_MAPS":
       return { ...state, allMaps: action.maps }
     case "UPDATE_HEROES":

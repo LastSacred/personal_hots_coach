@@ -27,7 +27,9 @@ const handleButtonClick = (event, props) => {
     default:
   }
 
+  props.selectHero(null)
   getHeroes().then(heroes => props.updateHeroes(heroes))
+  props.clearFilterValue()
 }
 
 const showButtons = (props) => {
@@ -53,6 +55,7 @@ const Hero = (props) => {
       />
       {showButtons(props)}
       <div>{props.hero.name}</div>
+      <div>{props.hero.role}</div>
     </Container>
   )
 }
@@ -69,7 +72,8 @@ const mapDispatchToProps = dispatch => {
     selectHero: (heroName) => dispatch({ type: 'SELECT_HERO', heroName: heroName}),
     addToBans: (heroName) => dispatch({ type: 'ADD_TO_BANS', heroName: heroName}),
     addToWithHeroes: (heroName) => dispatch({ type: 'ADD_TO_WITH_HEROES', heroName: heroName}),
-    addToAgainstHeroes: (heroName) => dispatch({ type: 'ADD_TO_AGAINST_HEROES', heroName: heroName})
+    addToAgainstHeroes: (heroName) => dispatch({ type: 'ADD_TO_AGAINST_HEROES', heroName: heroName}),
+    clearFilterValue: () => dispatch({ type: 'UPDATE_FILTER_VALUE', value: ''})
   }
 }
 

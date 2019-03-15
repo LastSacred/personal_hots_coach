@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 import { Container, Form } from 'semantic-ui-react'
 import { getHeroes } from '../services/backend'
 
-const filterHeroes = (event, updateHeroes) => {
-  const value = event.target.value
-
+const filterHeroes = (value, updateHeroes) => {
   getHeroes().then(heroes => {
     heroes = heroes.filter(hero => {
       const name = hero.name.toLowerCase().replace("ú", "u").replace(/[^A-Z0-9]/ig, "")
@@ -18,25 +16,41 @@ const filterHeroes = (event, updateHeroes) => {
   })
 }
 
+const handleChange = (event, props) => {
+  props.updateFileterValue(event.target.value)
+  filterHeroes(event.target.value, props.updateHeroes)
+}
+
 const HeroesSearch = (props) => {
   return(
     <Container>
       <Form>
-        <Form.Field onChange={(event) => filterHeroes(event, props.updateHeroes)}>
-          <input placeholder='Hero Name' />
+        <Form.Field>
+          <input
+            placeholder='Hero Name'
+            onChange={(event) => handleChange(event, props)}
+            value={props.filterValue}
+          />
         </Form.Field>
       </Form>
     </Container>
   )
 }
 
+const mapStateToProps = state => {
+  return {
+    filterValue: state.filterValue
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
-    updateHeroes: (heroes) => dispatch({ type: 'UPDATE_HEROES', heroes: heroes })
+    updateHeroes: (heroes) => dispatch({ type: 'UPDATE_HEROES', heroes: heroes }),
+    updateFileterValue: (value) => dispatch({ type: 'UPDATE_FILTER_VALUE', value: value })
   }
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(HeroesSearch)
