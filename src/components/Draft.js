@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getMaps, getHeroes, postDraft } from '../services/backend'
-import { Container, Grid } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 import Maps from './Maps'
 import Heroes from './Heroes'

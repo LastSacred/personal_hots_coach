@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container, Dropdown, Grid, Segment } from 'semantic-ui-react'
+import { Dropdown, Grid, Segment } from 'semantic-ui-react'
 
 const allMaps = (maps) => {
   return maps.map(map => {

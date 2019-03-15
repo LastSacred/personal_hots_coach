@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { Button, Form, Segment, Container } from 'semantic-ui-react'
 
 import { login } from '../services/backend'

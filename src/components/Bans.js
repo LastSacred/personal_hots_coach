@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container, Grid, Segment } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 import Hero from './Hero'
 
@@ -14,8 +14,8 @@ const Bans = (props) => {
 
     return bans.map((hero, index) => {
       return (
-        <Grid.Column>
-          <Hero key={index} hero={hero} parent={"Bans"} />
+        <Grid.Column key={index}>
+          <Hero hero={hero} parent={"Bans"} />
         </Grid.Column>
       )
     })
