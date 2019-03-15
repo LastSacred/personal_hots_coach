@@ -31,7 +31,12 @@ const postDraft = (draft) => {
       'Access-Token': localStorage.token
     },
     body: JSON.stringify({
-      draft: draft
+      draft: {
+        map: draft.map,
+        bans: draft.bans.map(hero => hero.name),
+        with_heroes: draft.with_heroes.map(hero => hero.name),
+        against_heroes: draft.against_heroes.map(hero => hero.name)
+      }
     })
   }).then(res => res.json())
 }

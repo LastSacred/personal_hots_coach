@@ -21,39 +21,55 @@ function rootReducer(
   switch (action.type) {
     case "UPDATE_LOGIN":
       return { ...state, loggedIn: localStorage.username }
+
     case "UPDATE_PAGE":
       let path = window.location.href
       path = path.split('/')
       const newPage = path[path.length - 1]
       return { ...state, page: newPage }
+
     case "UPDATE_FILTER_VALUE":
       return { ...state, filterValue: action.value }
+
     case "UPDATE_MAPS":
       return { ...state, allMaps: action.maps }
+
     case "UPDATE_HEROES":
       const heroes = action.heroes.filter(hero => {
-        return !state.draft.bans.concat(state.draft.with_heroes).concat(state.draft.against_heroes).includes(hero.name)
+        const banNames = state.draft.bans.map(hero => hero.name)
+        const with_heroNames = state.draft.with_heroes.map(hero => hero.name)
+        const against_heroNames = state.draft.against_heroes.map(hero => hero.name)
+        return !banNames.concat(with_heroNames).concat(against_heroNames).includes(hero.name)
       })
-
       return { ...state, allHeroes: heroes }
+
     case "UPDATE_DRAFT_MAP":
       return { ...state, draft: { ...state.draft, map: action.map } }
+
     case "UPDATE_PICKLIST":
       const pickList = action.pickList.filter(heroObj => {
-        return !state.draft.bans.concat(state.draft.with_heroes).concat(state.draft.against_heroes).includes(heroObj.hero.name)
+        const banNames = state.draft.bans.map(hero => hero.name)
+        const with_heroNames = state.draft.with_heroes.map(hero => hero.name)
+        const against_heroNames = state.draft.against_heroes.map(hero => hero.name)
+        return !banNames.concat(with_heroNames).concat(against_heroNames).includes(heroObj.hero.name)
       })
       return { ...state, pickList: pickList }
+
     case "SELECT_HERO":
       return { ...state, selectedHero: action.heroName }
+
     case "ADD_TO_BANS":
       if (state.draft.bans.length >= 6) return state
       return { ...state, draft: { ...state.draft, bans: [...state.draft.bans, action.heroName] } }
+
     case "ADD_TO_WITH_HEROES":
       if (state.draft.with_heroes.length >= 5) return state
       return { ...state, draft: { ...state.draft, with_heroes: [...state.draft.with_heroes, action.heroName] } }
+
     case "ADD_TO_AGAINST_HEROES":
       if (state.draft.against_heroes.length >= 5) return state
       return { ...state, draft: { ...state.draft, against_heroes: [...state.draft.against_heroes, action.heroName] } }
+
     default:
       return state
   }

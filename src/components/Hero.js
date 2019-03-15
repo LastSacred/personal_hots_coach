@@ -2,60 +2,67 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Container, Image, Button } from 'semantic-ui-react'
 
+import emptyIcon from '../assets/empty.jpg'
 import { getHeroes } from '../services/backend'
 
-const handleClick = (props) => {
-  switch (props.parent) {
-    case "HeroesContainer":
-      props.selectHero(props.hero.name)
-      break
-    default:
-  }
-}
-
-const handleButtonClick = (event, props) => {
-  switch (event.target.innerText) {
-    case 'Ban':
-      props.addToBans(props.hero.name)
-      break
-    case 'Team':
-      props.addToWithHeroes(props.hero.name)
-      break
-    case 'Enemy':
-      props.addToAgainstHeroes(props.hero.name)
-      break
-    default:
-  }
-
-  props.selectHero(null)
-  getHeroes().then(heroes => props.updateHeroes(heroes))
-  props.clearFilterValue()
-}
-
-const showButtons = (props) => {
-  if (props.hero.name !== props.selectedHero) return null
-
-  return (
-    <Button.Group vertical onClick={(event) => handleButtonClick(event, props)} >
-      <Button compact color='grey'>Ban</Button>
-      <Button compact color='green'>Team</Button>
-      <Button compact color='red'>Enemy</Button>
-    </Button.Group>
-  )
-}
-
 const Hero = (props) => {
+  const hero = props.hero || {
+    name: '',
+    role: '',
+    icon_url: emptyIcon
+  }
+
+  const handleClick = () => {
+    switch (props.parent) {
+      case "HeroesContainer":
+        props.selectHero(hero.name)
+        break
+      default:
+    }
+  }
+
+  const handleButtonClick = (event) => {
+    switch (event.target.innerText) {
+      case 'Ban':
+        props.addToBans(hero)
+        break
+      case 'Team':
+        props.addToWithHeroes(hero)
+        break
+      case 'Enemy':
+        props.addToAgainstHeroes(hero)
+        break
+      default:
+    }
+
+    props.selectHero(null)
+    getHeroes().then(heroes => props.updateHeroes(heroes))
+    props.clearFilterValue()
+  }
+
+  const showButtons = () => {
+    if (hero.name !== props.selectedHero) return null
+
+    return (
+      <Button.Group vertical onClick={handleButtonClick} >
+        <Button compact color='grey'>Ban</Button>
+        <Button compact color='green'>Team</Button>
+        <Button compact color='red'>Enemy</Button>
+      </Button.Group>
+    )
+  }
+
   return(
     <Container>
       <Image
-        onClick={() => handleClick(props)}
-        src={props.hero.icon_url}
+        onClick={handleClick}
+        src={hero.icon_url}
         size='tiny'
         rounded
       />
-      {showButtons(props)}
-      <div>{props.hero.name}</div>
-      <div>{props.hero.role}</div>
+      {showButtons()}
+      <div>{hero.name}</div>
+      <div>{hero.role}</div>
     </Container>
   )
 }
