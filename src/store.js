@@ -31,11 +31,15 @@ function rootReducer(
       const heroes = action.heroes.filter(hero => {
         return !state.draft.bans.concat(state.draft.with_heroes).concat(state.draft.against_heroes).includes(hero.name)
       })
+
       return { ...state, allHeroes: heroes }
     case "UPDATE_DRAFT_MAP":
       return { ...state, draft: { ...state.draft, map: action.map } }
     case "UPDATE_PICKLIST":
-      return { ...state, pickList: action.pickList }
+      const pickList = action.pickList.filter(heroObj => {
+        return !state.draft.bans.concat(state.draft.with_heroes).concat(state.draft.against_heroes).includes(heroObj.hero.name)
+      })
+      return { ...state, pickList: pickList }
     case "SELECT_HERO":
       return { ...state, selectedHero: action.heroName }
     case "ADD_TO_BANS":
