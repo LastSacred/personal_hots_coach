@@ -6,7 +6,7 @@ import Hero from './Hero'
 
 const showHeroes = (heroes) => {
   return heroes.map(hero => {
-    return <Hero key={hero.id} hero={hero} />
+    return <Hero key={hero.id} hero={hero} parent={"HeroesContainer"} />
   })
 }
 

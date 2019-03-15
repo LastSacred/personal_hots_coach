@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Form, Segment, Container } from 'semantic-ui-react'
-import { BrowserRouter as Router, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { BrowserRouter as Router, Redirect } from 'react-router-dom'
+import { Button, Form, Segment, Container } from 'semantic-ui-react'
 
 import { login } from '../services/backend'
 
@@ -19,7 +19,7 @@ class Login extends Component{
         localStorage.username = this.state.username
         this.props.updateLogin()
       })
-      
+
       this.setState({ username: '', password: ''})
   }
 
