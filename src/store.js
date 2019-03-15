@@ -70,6 +70,15 @@ function rootReducer(
       if (state.draft.against_heroes.length >= 5) return state
       return { ...state, draft: { ...state.draft, against_heroes: [...state.draft.against_heroes, action.heroName] } }
 
+    case "DESELECT_BAN":
+      return { ...state, draft: { ...state.draft, bans: state.draft.bans.filter(hero => hero.name !== action.heroName) } }
+
+    case "DESELECT_WITH_HERO":
+      return { ...state, draft: { ...state.draft, with_heroes: state.draft.with_heroes.filter(hero => hero.name !== action.heroName) } }
+
+    case "DESELECT_AGAINST_HERO":
+      return { ...state, draft: { ...state.draft, against_heroes: state.draft.against_heroes.filter(hero => hero.name !== action.heroName) } }
+
     default:
       return state
   }

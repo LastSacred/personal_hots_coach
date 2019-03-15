@@ -16,9 +16,20 @@ const Hero = (props) => {
     switch (props.parent) {
       case "HeroesContainer":
         props.selectHero(hero.name)
+        return
+      case "Bans":
+        props.deselectBan(hero.name)
+        break
+      case "Team":
+        props.deselectWithHero(hero.name)
+        break
+      case "Opponents":
+        props.deselectAgainstHero(hero.name)
         break
       default:
     }
+    
+    getHeroes().then(heroes => props.updateHeroes(heroes))
   }
 
   const handleButtonClick = (event) => {
@@ -80,6 +91,9 @@ const mapDispatchToProps = dispatch => {
     addToBans: (heroName) => dispatch({ type: 'ADD_TO_BANS', heroName: heroName}),
     addToWithHeroes: (heroName) => dispatch({ type: 'ADD_TO_WITH_HEROES', heroName: heroName}),
     addToAgainstHeroes: (heroName) => dispatch({ type: 'ADD_TO_AGAINST_HEROES', heroName: heroName}),
+    deselectBan: (heroName) => dispatch({ type: 'DESELECT_BAN', heroName: heroName }),
+    deselectWithHero: (heroName) => dispatch({ type: 'DESELECT_WITH_HERO', heroName: heroName }),
+    deselectAgainstHero: (heroName) => dispatch({ type: 'DESELECT_AGAINST_HERO', heroName: heroName }),
     clearFilterValue: () => dispatch({ type: 'UPDATE_FILTER_VALUE', value: ''})
   }
 }
