@@ -28,7 +28,10 @@ function rootReducer(
     case "UPDATE_MAPS":
       return { ...state, allMaps: action.maps }
     case "UPDATE_HEROES":
-      return { ...state, allHeroes: action.heroes }
+      const heroes = action.heroes.filter(hero => {
+        return !state.draft.bans.concat(state.draft.with_heroes).concat(state.draft.against_heroes).includes(hero.name)
+      })
+      return { ...state, allHeroes: heroes }
     case "UPDATE_DRAFT_MAP":
       return { ...state, draft: { ...state.draft, map: action.map } }
     case "UPDATE_PICKLIST":

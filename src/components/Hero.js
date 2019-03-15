@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Container, Image, Button } from 'semantic-ui-react'
 
+import { getHeroes } from '../services/backend'
+
 const handleClick = (props) => {
   switch (props.parent) {
     case "HeroesContainer":
@@ -24,6 +26,8 @@ const handleButtonClick = (event, props) => {
       break
     default:
   }
+
+  getHeroes().then(heroes => props.updateHeroes(heroes))
 }
 
 const showButtons = (props) => {
@@ -61,6 +65,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    updateHeroes: (heroes) => dispatch({ type: 'UPDATE_HEROES', heroes: heroes }),
     selectHero: (heroName) => dispatch({ type: 'SELECT_HERO', heroName: heroName}),
     addToBans: (heroName) => dispatch({ type: 'ADD_TO_BANS', heroName: heroName}),
     addToWithHeroes: (heroName) => dispatch({ type: 'ADD_TO_WITH_HEROES', heroName: heroName}),

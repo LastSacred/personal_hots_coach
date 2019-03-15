@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Container, Form } from 'semantic-ui-react'
 import { getHeroes } from '../services/backend'
 
-const filterHeroes = (event, dispatch) => {
+const filterHeroes = (event, updateHeroes) => {
   const value = event.target.value
 
   getHeroes().then(heroes => {
@@ -14,10 +14,7 @@ const filterHeroes = (event, dispatch) => {
       return name.includes(searchTerm)
     })
 
-    dispatch({
-      type: 'UPDATE_HEROES',
-      heroes: heroes
-    })
+    updateHeroes(heroes)
   })
 }
 
@@ -25,7 +22,7 @@ const HeroesSearch = (props) => {
   return(
     <Container>
       <Form>
-        <Form.Field onChange={(event) => filterHeroes(event, props.dispatch)}>
+        <Form.Field onChange={(event) => filterHeroes(event, props.updateHeroes)}>
           <input placeholder='Hero Name' />
         </Form.Field>
       </Form>
@@ -33,4 +30,13 @@ const HeroesSearch = (props) => {
   )
 }
 
-export default connect()(HeroesSearch)
+const mapDispatchToProps = dispatch => {
+  return {
+    updateHeroes: (heroes) => dispatch({ type: 'UPDATE_HEROES', heroes: heroes })
+  }
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(HeroesSearch)

@@ -9,27 +9,15 @@ import Heroes from './Heroes'
 
 class Draft extends Component {
   componentDidMount() {
-    getMaps().then(maps => this.props.dispatch({
-      type: 'UPDATE_MAPS',
-      maps: maps
-    }))
+    getMaps().then(maps => this.props.updateMaps(maps))
 
-    getHeroes().then(heroes => this.props.dispatch({
-      type: 'UPDATE_HEROES',
-      heroes: heroes
-    }))
+    getHeroes().then(heroes => this.props.updateHeroes(heroes))
 
-    postDraft(this.props.draft).then(draft => this.props.dispatch({
-      type: 'UPDATE_PICKLIST',
-      pickList: draft.pick_list
-    }))
+    postDraft(this.props.draft).then(draft => this.props.updatePickList(draft.pick_list))
   }
 
   componentDidUpdate() {
-    postDraft(this.props.draft).then(draft => this.props.dispatch({
-      type: 'UPDATE_PICKLIST',
-      pickList: draft.pick_list
-    }))
+    postDraft(this.props.draft).then(draft => this.props.updatePickList(draft.pick_list))
   }
 
   render() {
@@ -48,4 +36,15 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(Draft)
+const mapDispatchToProps = dispatch => {
+  return {
+    updateMaps: (maps) => dispatch({ type: 'UPDATE_MAPS', maps: maps }),
+    updateHeroes: (heroes) => dispatch({ type: 'UPDATE_HEROES', heroes: heroes }),
+    updatePickList: (pickList) => dispatch({ type: 'UPDATE_PICKLIST', pickList: pickList })
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Draft)
