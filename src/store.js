@@ -46,10 +46,13 @@ function rootReducer(
     case "SELECT_HERO":
       return { ...state, selectedHero: action.heroName }
     case "ADD_TO_BANS":
+      if (state.draft.bans.length >= 6) return state
       return { ...state, draft: { ...state.draft, bans: [...state.draft.bans, action.heroName] } }
     case "ADD_TO_WITH_HEROES":
+      if (state.draft.with_heroes.length >= 5) return state
       return { ...state, draft: { ...state.draft, with_heroes: [...state.draft.with_heroes, action.heroName] } }
     case "ADD_TO_AGAINST_HEROES":
+      if (state.draft.against_heroes.length >= 5) return state
       return { ...state, draft: { ...state.draft, against_heroes: [...state.draft.against_heroes, action.heroName] } }
     default:
       return state
