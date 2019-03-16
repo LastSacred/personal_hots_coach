@@ -1,19 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Grid, Segment } from 'semantic-ui-react'
+import { Grid, Segment, Loader } from 'semantic-ui-react'
 
 import Hero from './Hero'
 
-const HeroesContainer = (props) => {
+const PickList = (props) => {
   const showHeroes = () => {
+    if (props.pickList.length === 0) return <Loader active inline='centered' />
     return props.pickList.map(heroObj => {
       return <Hero key={heroObj.hero.id} hero={heroObj.hero} score={heroObj.score} parent={"PickList"} />
     })
   }
 
   return(
-    <Segment style={{overflow: 'auto', height: 140}}>
-      <Grid>
+    <Segment>
+      <Grid style={{overflow:'scroll hidden',height: 140, whiteSpace: 'nowrap', flexWrap: 'nowrap'}}>
         {showHeroes()}
       </Grid>
     </Segment>
@@ -26,4 +27,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(HeroesContainer)
+export default connect(mapStateToProps)(PickList)

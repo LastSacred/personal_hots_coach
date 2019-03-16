@@ -65,7 +65,7 @@ const Hero = (props) => {
   }
 
   return(
-    <div style={{minHeight: 125}}>
+    <div style={{minHeight: 125, minWidth: 90}}>
       <Image
         style={{margin: 'auto'}}
         onClick={handleClick}

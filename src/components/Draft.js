@@ -20,6 +20,7 @@ class Draft extends Component {
   }
 
   componentDidUpdate() {
+    this.props.updatePickList([])
     postDraft(this.props.draft).then(draft => this.props.updatePickList(draft.pick_list))
   }
 
