@@ -65,7 +65,12 @@ const Hero = (props) => {
   }
 
   const style = () => {
-    return {minHeight: 125, minWidth: 90, maxWidth: (props.parent === 'PickList' ? 90 : null), position: 'relative'}
+    return {
+      minHeight: 125,
+      minWidth: 90,
+      maxWidth: (props.parent === 'PickList' ? 90 : null),
+      position: 'relative'
+    }
   }
 
   return(

@@ -12,11 +12,13 @@ class Login extends Component{
   }
 
   handleSubmit = (event) => {
+    const username = this.state.username
+
     login(this.state.username, this.state.password)
       .then(data => {
         if (!data.token) return
         localStorage.token = data.token
-        localStorage.username = this.state.username
+        localStorage.username = username
         this.props.updateLogin()
       })
 

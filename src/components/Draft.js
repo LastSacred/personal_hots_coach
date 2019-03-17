@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { getMaps, getHeroes, postDraft } from '../services/backend'
 import { Grid } from 'semantic-ui-react'
 
@@ -12,6 +13,7 @@ import PickList from './PickList'
 
 class Draft extends Component {
   componentDidMount() {
+    if (!this.props.loggedIn) return
     getMaps().then(maps => this.props.updateMaps(maps))
 
     getHeroes().then(heroes => this.props.updateHeroes(heroes))
@@ -27,6 +29,7 @@ class Draft extends Component {
   render() {
     return(
         <Grid>
+          {this.props.loggedIn ? null : <Redirect to="/Login" />}
         <Bans />
           <Grid.Row>
             <Team />
@@ -44,7 +47,8 @@ class Draft extends Component {
 
 const mapStateToProps = state => {
   return {
-    draft: state.draft
+    draft: state.draft,
+    loggedIn: state.loggedIn
   }
 }
 
