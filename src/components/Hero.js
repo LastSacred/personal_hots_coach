@@ -56,7 +56,7 @@ const Hero = (props) => {
     if (props.parent !== 'HeroesContainer') return null
 
     return (
-      <Button.Group vertical onClick={handleButtonClick} >
+      <Button.Group vertical onClick={handleButtonClick} style={{position: 'absolute', top: 1, left: "16%"}} >
         <Button compact color='grey'>Ban</Button>
         <Button compact color='green'>Team</Button>
         <Button compact color='red'>Enemy</Button>
@@ -64,10 +64,13 @@ const Hero = (props) => {
     )
   }
 
+  const style = () => {
+    return {minHeight: 125, minWidth: 90, maxWidth: (props.parent === 'PickList' ? 90 : null), position: 'relative'}
+  }
+
   return(
-    <div style={{minHeight: 125, minWidth: 90}}>
+    <div style={style()}>
       <Image
-        style={{margin: 'auto'}}
         onClick={handleClick}
         src={hero.icon_url}
         size='tiny'
