@@ -50,6 +50,14 @@ const postUser = (params) => {
   }).then(res => res.json())
 }
 
+const getReplays = () => {
+  return fetch(BackendUrl + 'replay_files',{
+    headers: {
+      'Access-Token': localStorage.token
+    }
+  }).then(res => res.json())
+}
+
 const postReplays = (files) => {
   return fetch(BackendUrl + 'replay_files', {
     method: 'POST',
@@ -57,7 +65,7 @@ const postReplays = (files) => {
       'Access-Token': localStorage.token
     },
     body: files
-  })
+  }).then(res => res.json())
 }
 
-export { login, getMaps, getHeroes, postDraft, postUser, postReplays }
+export { login, getMaps, getHeroes, postDraft, postUser, postReplays, getReplays }
