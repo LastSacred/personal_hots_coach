@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Container, Form } from 'semantic-ui-react'
-import { getHeroes } from '../services/backend'
+import { getHeroes } from '../services/api'
 
 const filterHeroes = (value, updateHeroes) => {
   getHeroes().then(heroes => {

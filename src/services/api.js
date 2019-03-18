@@ -1,7 +1,7 @@
-const URL = 'http://localhost:3000/'
+const BackendUrl = 'http://localhost:3000/'
 
 const login = (params) => {
-  return fetch(URL + 'login', {
+  return fetch(BackendUrl + 'login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -13,15 +13,15 @@ const login = (params) => {
 }
 
 const getMaps = () => {
-  return fetch(URL + 'maps').then(res => res.json())
+  return fetch(BackendUrl + 'maps').then(res => res.json())
 }
 
 const getHeroes = () => {
-  return fetch(URL + 'heroes').then(res => res.json())
+  return fetch(BackendUrl + 'heroes').then(res => res.json())
 }
 
 const postDraft = (draft) => {
-  return fetch(URL + 'drafts', {
+  return fetch(BackendUrl + 'drafts', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const postDraft = (draft) => {
 }
 
 const postUser = (params) => {
-  return fetch(URL + 'users', {
+  return fetch(BackendUrl + 'users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -50,4 +50,14 @@ const postUser = (params) => {
   }).then(res => res.json())
 }
 
-export { login, getMaps, getHeroes, postDraft, postUser }
+const postReplay = (file) => {
+  return fetch(BackendUrl + 'replay_files', {
+    method: 'POST',
+    headers: {
+      'Access-Token': localStorage.token
+    },
+    body: file
+  })
+}
+
+export { login, getMaps, getHeroes, postDraft, postUser, postReplay }

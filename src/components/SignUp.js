@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Button, Form, Segment, Container, Message } from 'semantic-ui-react'
 
-import { postUser, login } from '../services/backend'
+import { postUser, login } from '../services/api'
 
 class SignUp extends Component{
   state = {
@@ -26,8 +26,8 @@ class SignUp extends Component{
         login(this.state)
           .then(data => {
             if (!data.token) return
-            localStorage.token = data.token
-            localStorage.username = name
+            localStorage.currentUser.token = data.token
+            localStorage.currentUser.username = name
             this.props.updateLogin()
           })
         }
@@ -46,7 +46,7 @@ class SignUp extends Component{
         {this.props.loggedIn ? <Redirect to="/" /> : null}
         <Segment compact raised color='violet'>
           <Form
-            error={this.state.errors.length > 0} 
+            error={this.state.errors.length > 0}
             size='large'
             onSubmit={this.handleSubmit}
           >

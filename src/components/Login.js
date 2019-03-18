@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect, Link } from 'react-router-dom'
 import { Button, Form, Segment, Container } from 'semantic-ui-react'
 
-import { login } from '../services/backend'
+import { login } from '../services/api'
 
 class Login extends Component{
   state = {
@@ -17,8 +17,8 @@ class Login extends Component{
     login(this.state)
       .then(data => {
         if (!data.token) return
-        localStorage.token = data.token
-        localStorage.username = name
+        localStorage.currentUser.token = data.token
+        localStorage.currentUser.username = name
         this.props.updateLogin()
       })
 

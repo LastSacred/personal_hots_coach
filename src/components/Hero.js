@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Image, Button } from 'semantic-ui-react'
 
 import emptyIcon from '../assets/empty.jpg'
-import { getHeroes } from '../services/backend'
+import { getHeroes } from '../services/api'
 
 const Hero = (props) => {
   const hero = props.hero || {

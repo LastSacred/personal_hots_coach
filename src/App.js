@@ -12,6 +12,7 @@ import Home from './components/Home'
 import Draft from './components/Draft'
 import Stats from './components/Stats'
 import Profile from './components/Profile'
+import Upload from './components/Upload'
 
 class App extends Component {
   componentDidMount() {
@@ -32,6 +33,7 @@ class App extends Component {
           <Route path="/profile" component={Profile} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/upload" component={Upload} />
           <Route path="/" component={Home} />
         </Switch>
       </div>

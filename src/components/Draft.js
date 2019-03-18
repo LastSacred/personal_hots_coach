@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { getMaps, getHeroes, postDraft } from '../services/backend'
+import { getMaps, getHeroes, postDraft } from '../services/api'
 import { Grid } from 'semantic-ui-react'
 
 import Maps from './Maps'
