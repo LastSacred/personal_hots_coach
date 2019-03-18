@@ -50,14 +50,14 @@ const postUser = (params) => {
   }).then(res => res.json())
 }
 
-const postReplay = (file) => {
+const postReplays = (files) => {
   return fetch(BackendUrl + 'replay_files', {
     method: 'POST',
     headers: {
       'Access-Token': localStorage.token
     },
-    body: file
+    body: files
   })
 }
 
-export { login, getMaps, getHeroes, postDraft, postUser, postReplay }
+export { login, getMaps, getHeroes, postDraft, postUser, postReplays }

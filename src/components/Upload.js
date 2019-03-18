@@ -3,23 +3,26 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Button, Form, Segment, Container } from 'semantic-ui-react'
 
-import { postReplay } from '../services/api'
+import { postReplays } from '../services/api'
 
 const Upload = (props) => {
-  const uploadReplay = (file) => {
-    let data = new FormData()
-
-    data.set('file', file)
-
-    postReplay(data).then(console.log)
-  }
+  // const uploadReplay = (file) => {
+  //   let data = new FormData()
+  //
+  //   data.set('file', file)
+  //
+  //   postReplay(data).then(console.log)
+  // }
 
   const handleSubmit = (event) => {
     const files = event.target.files.files
+    const data = new FormData()
 
     for (let i = 0; i < files.length; i++) {
-      uploadReplay(files[i])
+      data.append('files[]', files[i])
     }
+
+    postReplays(data).then(console.log)
   }
 
   return(
