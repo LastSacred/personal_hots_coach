@@ -1,16 +1,13 @@
 const URL = 'http://localhost:3000/'
 
-const login = (username, password) => {
+const login = (params) => {
   return fetch(URL + 'login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      user: {
-        name: username,
-        password: password
-      }
+      user: params
     })
   }).then(res => res.json())
 }
@@ -41,4 +38,16 @@ const postDraft = (draft) => {
   }).then(res => res.json())
 }
 
-export { login, getMaps, getHeroes, postDraft }
+const postUser = (params) => {
+  return fetch(URL + 'users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      user: params
+    })
+  }).then(res => res.json())
+}
+
+export { login, getMaps, getHeroes, postDraft, postUser }

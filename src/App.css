@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  /* background-image: url("./assets/background.jpg");
+  height: 1000px; */
 }
 
 .App-logo {
@@ -21,15 +23,6 @@
 
 .App-link {
   color: #61dafb;
-}
-
-.sst {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  height: 140px;
-  flex-wrap: nowrap;
-  background-color: lilac;
 }
 
 @keyframes App-logo-spin {

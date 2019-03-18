@@ -76,6 +76,7 @@ const Hero = (props) => {
   return(
     <div style={style()}>
       <Image
+        style={{margin: 'auto'}}
         onClick={handleClick}
         src={hero.icon_url}
         size='tiny'

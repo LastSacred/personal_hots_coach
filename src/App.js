@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 
 import Navbar from './components/Navbar'
 import Login from './components/Login'
+import SignUp from './components/SignUp'
 import Home from './components/Home'
 import Draft from './components/Draft'
 import Stats from './components/Stats'
@@ -30,6 +31,7 @@ class App extends Component {
           <Route path="/stats" component={Stats} />
           <Route path="/profile" component={Profile} />
           <Route path="/login" component={Login} />
+          <Route path="/signup" component={SignUp} />
           <Route path="/" component={Home} />
         </Switch>
       </div>

@@ -1,28 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Redirect, Link } from 'react-router-dom'
-import { Button, Form, Segment, Container } from 'semantic-ui-react'
+import { Redirect } from 'react-router-dom'
+import { Button, Form, Segment, Container, Message } from 'semantic-ui-react'
 
-import { login } from '../services/backend'
+import { postUser, login } from '../services/backend'
 
-class Login extends Component{
+class SignUp extends Component{
   state = {
     name: '',
     password: '',
+    battletag: '',
+    errors: []
   }
 
   handleSubmit = (event) => {
     const name = this.state.name
 
-    login(this.state)
-      .then(data => {
-        if (!data.token) return
-        localStorage.token = data.token
-        localStorage.username = name
-        this.props.updateLogin()
-      })
+    postUser(this.state)
+      .then((data) => {
+        if (data.errors) {
+          this.setState({errors: data.errors})
+          return
+        }
 
-      this.setState({ name: '', password: ''})
+        login(this.state)
+          .then(data => {
+            if (!data.token) return
+            localStorage.token = data.token
+            localStorage.username = name
+            this.props.updateLogin()
+          })
+        }
+      )
   }
 
   handleChange = (event) => {
@@ -36,7 +45,11 @@ class Login extends Component{
       <Container>
         {this.props.loggedIn ? <Redirect to="/" /> : null}
         <Segment compact raised color='violet'>
-          <Form size='large' onSubmit={this.handleSubmit}>
+          <Form
+            error={this.state.errors.length > 0} 
+            size='large'
+            onSubmit={this.handleSubmit}
+          >
             <Form.Field>
               <label>Username</label>
               <input
@@ -56,10 +69,21 @@ class Login extends Component{
                 value={this.state.password}
               />
             </Form.Field>
-            <Button type='submit'>Login</Button>
-            <Link to='/signup'>
-              <div>Sign Up</div>
-            </Link>
+            <Form.Field>
+              <label>Battletag</label>
+              <input
+                name='battletag'
+                placeholder='Battletag'
+                onChange={this.handleChange}
+                value={this.state.battletag}
+              />
+            </Form.Field>
+            <Message
+              error
+              header='Errors'
+              content={this.state.errors[0]}
+            />
+            <Button type='submit'>Submit</Button>
           </Form>
         </Segment>
       </Container>
@@ -82,4 +106,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Login)
+)(SignUp)
