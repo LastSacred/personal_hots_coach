@@ -21,7 +21,7 @@ class Upload extends Component {
         data.append('files[]', files[i])
       }
 
-      if (files.length > 0) return postReplays(data).then(this.setState({message: {success: "Success!"} }))
+      if (files.length > 0) return postReplays(data).then(this.setState({message: ["success", "Uploaded", `Uploaded ${files.length} files`] }))
     })
   }
 
@@ -31,7 +31,7 @@ class Upload extends Component {
         {this.props.loggedIn ? null : <Redirect to="/login" />}
         <Segment compact raised color='violet'>
         <h1>Upload</h1>
-          <Form size='large' onSubmit={this.handleSubmit}>
+          <Form success={this.state.message[0] === 'success'} size='large' onSubmit={this.handleSubmit}>
             <Form.Field>
               <label>Files</label>
               <input
@@ -40,6 +40,11 @@ class Upload extends Component {
                 multiple
               />
             </Form.Field>
+            <Message
+              success
+              header={this.state.message[1]}
+              content={this.state.message[2]}
+            />
             <Button type='submit'>Submit</Button>
           </Form>
         </Segment>
