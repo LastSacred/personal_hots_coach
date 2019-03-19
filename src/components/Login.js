@@ -17,8 +17,8 @@ class Login extends Component{
     login(this.state)
       .then(data => {
         if (!data.token) return
-        localStorage.currentUser.token = data.token
-        localStorage.currentUser.username = name
+        localStorage.token = data.token
+        localStorage.username = name
         this.props.updateLogin()
       })
 

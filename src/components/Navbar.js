@@ -1,35 +1,57 @@
 import React from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Dropdown } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-const logInOut = (props) => {
-  if (props.loggedIn) {
-    return (
-      <Link to='/profile'>
-        <Menu.Item
-          name=''
-          color={'violet'}
-          active={props.page === 'profile'}
-        >
-          {props.loggedIn}
-        </Menu.Item>
-      </Link>
-    )
-  } else {
-    return(
-      <Link to='/login'>
-        <Menu.Item
-          name='login'
-          color={'violet'}
-          active={props.page === 'login'}
-        />
-      </Link>
-    )
-  }
-}
+
 
 const Navbar = (props) => {
+  const logInOut = (props) => {
+    if (props.loggedIn) {
+      const options = [
+        { key:'profile', text: "Profile", as: Link, to: '/profile' },
+        { key:'logout', text: "Log Out", value: "logout"}
+      ]
+
+      const handleChange = (event) => {
+        if (event.target.innerText !== "Log Out") return
+
+        localStorage.clear()
+        props.updateLogin()
+      }
+
+      return (
+        // <Link to='/profile'>
+          <Dropdown
+            item
+            simple
+            text={props.loggedIn}
+            direction='right'
+            options={options}
+            onChange={handleChange}
+          />
+          // <Menu.Item
+          //   name=''
+          //   color={'violet'}
+          //   active={props.page === 'profile'}
+          // >
+          //   {props.loggedIn}
+          // </Menu.Item>
+        // </Link>
+      )
+    } else {
+      return(
+        <Link to='/login'>
+          <Menu.Item
+            name='login'
+            color={'violet'}
+            active={props.page === 'login'}
+          />
+        </Link>
+      )
+    }
+  }
+
   return(
     <Menu inverted>
        <Menu.Item active={true} header>Personal HotS Coach</Menu.Item>
@@ -77,7 +99,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-
+    updateLogin: () => dispatch({ type: 'UPDATE_LOGIN'})
   }
 }
 
