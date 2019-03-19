@@ -68,4 +68,13 @@ const postReplays = (files) => {
   }).then(res => res.json())
 }
 
-export { login, getMaps, getHeroes, postDraft, postUser, postReplays, getReplays }
+const postMatches = () => {
+  return fetch (BackendUrl + 'matches', {
+    method: 'POST',
+    headers: {
+      'Access-Token': localStorage.token
+    }
+  })
+}
+
+export { login, getMaps, getHeroes, postDraft, postUser, postReplays, getReplays, postMatches }

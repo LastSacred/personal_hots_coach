@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { getMaps, getHeroes, postDraft } from '../services/api'
+import { getMaps, getHeroes, postDraft, postMatches } from '../services/api'
 import { Grid } from 'semantic-ui-react'
 
 import Maps from './Maps'
@@ -17,6 +17,8 @@ class Draft extends Component {
     getMaps().then(maps => this.props.updateMaps(maps))
 
     getHeroes().then(heroes => this.props.updateHeroes(heroes))
+
+    postMatches()
 
     postDraft(this.props.draft).then(draft => this.props.updatePickList(draft.pick_list))
   }

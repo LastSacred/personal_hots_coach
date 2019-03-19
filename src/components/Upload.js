@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Button, Form, Segment, Container, Message, Loader } from 'semantic-ui-react'
 
-import { postReplays, getReplays } from '../services/api'
+import { postReplays, getReplays, postMatches } from '../services/api'
 
 class Upload extends Component {
   state = {
@@ -24,14 +24,14 @@ class Upload extends Component {
       }
 
       if (files.length > 0) {
-        return postReplays(data).then(this.setState({
+        postReplays(data).then(this.setState({
           message: [
             "success",
             "Uploaded",
             `Uploaded ${files.length} files`
           ]
         }), () => {
-          // TODO: send fetch to import
+          postMatches()
         })
       } else {
         this.setState({

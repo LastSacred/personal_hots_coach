@@ -67,3 +67,17 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 # personal_hots_coach
+
+<!--
+write missing tests
+home page
+profile page
+find missing pictures
+theming
+stats
+refactoring
+replay uploader app
+parse replay files
+multi-user performance
+screen read
+-->

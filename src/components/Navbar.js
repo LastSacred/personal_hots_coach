@@ -11,7 +11,6 @@ const logInOut = (props) => {
           name=''
           color={'violet'}
           active={props.page === 'profile'}
-          onClick={null}
         >
           {props.loggedIn}
         </Menu.Item>
@@ -24,7 +23,6 @@ const logInOut = (props) => {
           name='login'
           color={'violet'}
           active={props.page === 'login'}
-          onClick={null}
         />
       </Link>
     )
@@ -40,7 +38,6 @@ const Navbar = (props) => {
            name='home'
            color={'violet'}
            active={props.page === ''}
-           onClick={null}
          />
         </Link>
        <Link to='/draft'>
@@ -48,7 +45,6 @@ const Navbar = (props) => {
            name='draft'
            color={'violet'}
            active={props.page === 'draft'}
-           onClick={null}
          />
        </Link>
        <Link to='/stats'>
@@ -56,7 +52,13 @@ const Navbar = (props) => {
            name='stats'
            color={'violet'}
            active={props.page === 'stats'}
-           onClick={null}
+         />
+       </Link>
+       <Link to='/upload'>
+         <Menu.Item
+           name='upload'
+           color={'violet'}
+           active={props.page === 'upload'}
          />
        </Link>
        <Menu.Menu position='right'>
