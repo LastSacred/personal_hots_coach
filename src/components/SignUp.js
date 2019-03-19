@@ -81,7 +81,7 @@ class SignUp extends Component{
             <Message
               error
               header='Errors'
-              content={this.state.errors[0]}
+              list={this.state.errors}
             />
             <Button type='submit'>Submit</Button>
           </Form>

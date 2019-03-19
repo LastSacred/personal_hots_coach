@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { Button, Form, Segment, Container } from 'semantic-ui-react'
+import { Button, Form, Segment, Container, Message, Loader } from 'semantic-ui-react'
 
 import { postReplays, getReplays } from '../services/api'
 
 class Upload extends Component {
   state = {
-    message: null
+    message: [null, null, null]
   }
 
   handleSubmit = (event) => {
     let files = event.target.files.files
     const data = new FormData()
+
+    this.setState({message: ['loading', null, null]})
 
     getReplays().then(replayFiles => {
       files = [...files].filter(file => !replayFiles.find(replayFile => replayFile.name === file.name))
@@ -21,7 +23,21 @@ class Upload extends Component {
         data.append('files[]', files[i])
       }
 
-      if (files.length > 0) return postReplays(data).then(this.setState({message: ["success", "Uploaded", `Uploaded ${files.length} files`] }))
+      if (files.length > 0) {
+        return postReplays(data).then(this.setState({
+          message: [
+            "success",
+            "Uploaded",
+            `Uploaded ${files.length} files`
+          ]
+        }), () => {
+          // TODO: send fetch to import
+        })
+      } else {
+        this.setState({
+          message: ["warning", "No New Files", "There are no new files to upload"]
+        })
+      }
     })
   }
 
@@ -31,7 +47,12 @@ class Upload extends Component {
         {this.props.loggedIn ? null : <Redirect to="/login" />}
         <Segment compact raised color='violet'>
         <h1>Upload</h1>
-          <Form success={this.state.message[0] === 'success'} size='large' onSubmit={this.handleSubmit}>
+          <Form
+            success={this.state.message[0] === 'success'}
+            warning={this.state.message[0] === 'warning'}
+            size='large'
+            onSubmit={this.handleSubmit}
+          >
             <Form.Field>
               <label>Files</label>
               <input
@@ -40,8 +61,19 @@ class Upload extends Component {
                 multiple
               />
             </Form.Field>
+            {
+              (this.state.message[0] === 'loading' || this.state.message[1] === "Uploaded") ?
+              <Loader active inline='centered' />
+              :
+              null
+            }
             <Message
               success
+              header={this.state.message[1]}
+              content={this.state.message[2]}
+            />
+            <Message
+              warning
               header={this.state.message[1]}
               content={this.state.message[2]}
             />
