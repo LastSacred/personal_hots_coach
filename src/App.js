@@ -11,7 +11,7 @@ import SignUp from './components/SignUp'
 import Home from './components/Home'
 import Draft from './components/Draft'
 import Stats from './components/Stats'
-import Profile from './components/Profile'
+import Settings from './components/Settings'
 import Upload from './components/Upload'
 
 class App extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
         <Switch>
           <Route path="/draft" component={Draft} />
           <Route path="/stats" component={Stats} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/settings" component={Settings} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
           <Route path="/upload" component={Upload} />

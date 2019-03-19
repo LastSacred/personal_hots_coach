@@ -38,7 +38,15 @@ const postDraft = (draft) => {
   }).then(res => res.json())
 }
 
-const postUser = (params) => {
+const getUser = () => {
+  return fetch(BackendUrl + 'users', {
+    headers: {
+      'Access-Token': localStorage.token
+    }
+  }).then(res => res.json())
+}
+
+const postUsers = (params) => {
   return fetch(BackendUrl + 'users', {
     method: 'POST',
     headers: {
@@ -77,4 +85,4 @@ const postMatches = () => {
   })
 }
 
-export { login, getMaps, getHeroes, postDraft, postUser, postReplays, getReplays, postMatches }
+export { login, getMaps, getHeroes, postDraft, getUser, postUsers, postReplays, getReplays, postMatches }

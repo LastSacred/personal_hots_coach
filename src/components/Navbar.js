@@ -9,7 +9,7 @@ const Navbar = (props) => {
   const logInOut = (props) => {
     if (props.loggedIn) {
       const options = [
-        { key:'profile', text: "Profile", as: Link, to: '/profile' },
+        { key:'settings', text: "Settings", as: Link, to: '/settings' },
         { key:'logout', text: "Log Out", value: "logout"}
       ]
 
@@ -21,7 +21,7 @@ const Navbar = (props) => {
       }
 
       return (
-        // <Link to='/profile'>
+        // <Link to='/settings'>
           <Dropdown
             item
             simple
@@ -33,7 +33,7 @@ const Navbar = (props) => {
           // <Menu.Item
           //   name=''
           //   color={'violet'}
-          //   active={props.page === 'profile'}
+          //   active={props.page === 'settings'}
           // >
           //   {props.loggedIn}
           // </Menu.Item>

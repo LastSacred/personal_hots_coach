@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Button, Form, Segment, Container, Message } from 'semantic-ui-react'
 
-import { postUser, login } from '../services/api'
+import { postUsers, login } from '../services/api'
 
 class SignUp extends Component{
   state = {
@@ -16,7 +16,7 @@ class SignUp extends Component{
   handleSubmit = (event) => {
     const name = this.state.name
 
-    postUser(this.state)
+    postUsers(this.state)
       .then((data) => {
         if (data.errors) {
           this.setState({errors: data.errors})

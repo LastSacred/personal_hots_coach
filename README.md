@@ -69,7 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 # personal_hots_coach
 
 <!--
-profile page
+settings page
 find missing pictures
 theming
 stats
