@@ -69,12 +69,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 # personal_hots_coach
 
 <!--
-write missing tests
-home page
+drop down for profile/logout
 profile page
 find missing pictures
 theming
 stats
+dropdown?
 refactoring
 replay uploader app
 parse replay files
