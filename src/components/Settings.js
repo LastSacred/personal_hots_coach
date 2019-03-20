@@ -11,7 +11,7 @@ class Settings extends Component {
     battletag: null,
     auto_roster: false,
     heroes: [],
-    addRemove: [null, null]
+    addRemove: [null, '']
   }
 
   draft = () => {
@@ -49,7 +49,7 @@ class Settings extends Component {
     this.props.updatePickList([])
 
     this.setState({auto_roster: !this.state.auto_roster}, () => {
-      updateUser(this.state).then(() => {
+      updateUser({auto_roster: this.state.auto_roster}).then(() => {
         postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
       })
     })
@@ -63,16 +63,26 @@ class Settings extends Component {
   }
 
   handleAddRemoveButtonClick = (event) => {
-    let newHeroes
+    this.props.updatePickList([])
+    let newRoster
 
     if (this.state.addRemove[0] === "Add") {
-      const addedHero this.props.allHeroes.find(hero => hero.name === this.state.addRemove[1])
-      newHeroes = [...this.state.heroes, addedHero]
+      const addedHero = this.props.allHeroes.find(hero => hero.name === this.state.addRemove[1])
+      newRoster = [...this.state.heroes, addedHero]
     } else {
-      newHeroes = this.state.heroes.filter(hero => hero.name !== this.state.addRemove[1])
+      newRoster = this.state.heroes.filter(hero => hero.name !== this.state.addRemove[1])
     }
-    console.log(newHeroes);
-    // updateUser({heroes: heroes})
+
+    this.setState({
+      heroes: newRoster,
+      addRemove: [null, '']
+    })
+
+    const newRosterNames = newRoster.map(hero => hero.name)
+
+    updateUser({roster: newRosterNames}).then(() => {
+      postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
+    })
   }
 
   showAddRemoveHeroes = () => {
@@ -81,7 +91,7 @@ class Settings extends Component {
     } else {
       return (
         <Form>
-          <Form.Group inline>
+          <Form.Group inline style={{marginTop: 15}}>
             <Form.Field>
               <Dropdown
                 style={{width: 250}}
@@ -90,6 +100,7 @@ class Settings extends Component {
                 search
                 selection
                 options={this.allHeroes()}
+                value={this.state.addRemove[1]}
                 onChange={this.handleAddRemoveHeroChange}
               />
             </Form.Field>
