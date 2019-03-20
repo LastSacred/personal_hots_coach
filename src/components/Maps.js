@@ -2,17 +2,17 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Dropdown, Grid, Segment } from 'semantic-ui-react'
 
-const allMaps = (maps) => {
-  return maps.map(map => {
-     return {
-      key: map.id,
-      value: map.name,
-      text: map.name
-    }
-  })
-}
-
 const Maps = (props) => {
+  const allMaps = () => {
+    return props.allMaps.map(map => {
+       return {
+        key: map.id,
+        value: map.name,
+        text: map.name
+      }
+    })
+  }
+
   return(
     <Grid.Row>
       <Segment raised>

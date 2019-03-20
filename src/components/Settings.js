@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Container, Radio } from 'semantic-ui-react'
 
-import { getUser, postDraft, postMatches, updateUser } from '../services/api.js'
+import { getUser, postDraft, postMatches, updateUsers, getHeroes } from '../services/api.js'
 import PickList from './PickList'
 
 class Settings extends Component {
@@ -12,25 +12,51 @@ class Settings extends Component {
     auto_roster: false
   }
 
-  componentDidMount() {
-    const draft = {
+  draft = () => {
+    return {
       map: '',
       bans: [],
       with_heroes: [],
       against_heroes: []
     }
+  }
 
+  componentDidMount() {
     postMatches()
+
+    getHeroes().then(heroes => this.props.updateHeroes(heroes))
 
     getUser().then(user => {
       this.setState(user)
     })
 
-    postDraft(draft).then(draft => this.props.updatePickList(draft.pick_list))
+    postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
   }
 
-  handleAutoRosterClick() {
-    // updateUser({auto_roster: !this.state.auto_roster}).then()
+  handleAutoRosterClick = () => {
+    this.props.updatePickList([])
+
+    this.setState({auto_roster: !this.state.auto_roster}, () => {
+      updateUsers(this.state).then(() => {
+        postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
+      })
+    })
+  }
+
+  showAddRemoveHeroes = () => {
+    if (this.state.auto_roster) {
+      return null
+    } else {
+      // <Dropdown
+      //   style={{maxWidth: 500}}
+      //   placeholder='Add/Remove Hero'
+      //   fluid
+      //   search
+      //   selection
+      //   options={allMaps(props.allMaps)}
+      //   onChange={(event) => props.updateDraftMap(event.target.innerText)}
+      // />
+    }
   }
 
   render() {
@@ -41,12 +67,15 @@ class Settings extends Component {
         <h2>Battletag</h2>
         <div>{this.state.battletag}</div>
         <h2>Roster</h2>
-        <Radio
-          toggle
-          label="Auto"
-          checked={this.state.auto_roster}
-          onClick={this.handleAutoRosterClick}
-        />
+        <div>
+          <Radio
+            toggle
+            label="Auto"
+            checked={this.state.auto_roster}
+            onClick={this.handleAutoRosterClick}
+          />
+
+        </div>
         <PickList />
       </Container>
     )
@@ -61,6 +90,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    updateHeroes: (heroes) => dispatch({ type: 'UPDATE_HEROES', heroes: heroes }),
     updatePickList: (pickList) => dispatch({ type: 'UPDATE_PICKLIST', pickList: pickList })
   }
 }

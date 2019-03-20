@@ -58,8 +58,21 @@ const postUsers = (params) => {
   }).then(res => res.json())
 }
 
+const updateUsers = (params) => {
+  return fetch(BackendUrl + 'users', {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Token': localStorage.token
+    },
+    body: JSON.stringify({
+      user: params
+    })
+  }).then(res => res.json())
+}
+
 const getReplays = () => {
-  return fetch(BackendUrl + 'replay_files',{
+  return fetch(BackendUrl + 'replay_files', {
     headers: {
       'Access-Token': localStorage.token
     }
@@ -85,4 +98,4 @@ const postMatches = () => {
   })
 }
 
-export { login, getMaps, getHeroes, postDraft, getUser, postUsers, postReplays, getReplays, postMatches }
+export { login, getMaps, getHeroes, postDraft, getUser, updateUsers, postUsers, postReplays, getReplays, postMatches }
