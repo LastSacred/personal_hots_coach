@@ -58,7 +58,7 @@ const postUsers = (params) => {
   }).then(res => res.json())
 }
 
-const updateUsers = (params) => {
+const updateUser = (params) => {
   return fetch(BackendUrl + 'users', {
     method: 'PATCH',
     headers: {
@@ -98,4 +98,4 @@ const postMatches = () => {
   })
 }
 
-export { login, getMaps, getHeroes, postDraft, getUser, updateUsers, postUsers, postReplays, getReplays, postMatches }
+export { login, getMaps, getHeroes, postDraft, getUser, updateUser, postUsers, postReplays, getReplays, postMatches }

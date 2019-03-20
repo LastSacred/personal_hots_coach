@@ -22,7 +22,7 @@ const Maps = (props) => {
           fluid
           search
           selection
-          options={allMaps(props.allMaps)}
+          options={allMaps()}
           onChange={(event) => props.updateDraftMap(event.target.innerText)}
         />
       </Segment>
