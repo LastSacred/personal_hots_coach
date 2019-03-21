@@ -167,22 +167,22 @@
 
 
 /* Active Item */
-@activeItemBackground: @lightBlack;
+@activeItemBackground: @transparentBlack;
 @activeItemTextColor: @selectedTextColor;
 @activeItemFontWeight: @normal;
 @activeIconOpacity: 1;
 @activeItemBoxShadow: none;
 
 /* Active Hovered Item */
-@activeHoverItemBackground: @laightBlack;
+@activeHoverItemBackground: @transparentBlack;
 @activeHoverItemColor: @selectedTextColor;
 
 /* Selected Dropdown */
-@dropdownSelectedItemBackground: @lightBlack;
+@dropdownSelectedItemBackground: @transparentBlack;
 @dropdownSelectedItemColor: @selectedTextColor;
 
 /* Active Dropdown */
-@dropdownActiveItemBackground: @lightBlack;
+@dropdownActiveItemBackground: @subtleTransparentBlack;
 @dropdownActiveItemColor: @selectedTextColor;
 @dropdownActiveItemFontWeight: @bold;
 

@@ -247,14 +247,14 @@
   pointer-events: none;
   background: transparent;
   font-weight: normal;
-  color: rgba(250, 249, 236, 0.4);
+  color: rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: -1px -1px 0px 1px #FAF9EC;
           box-shadow: -1px -1px 0px 1px #FAF9EC;
 }
 .ui.definition.table tfoot:not(.full-width) th:first-child {
   pointer-events: none;
   background: transparent;
-  font-weight: rgba(250, 249, 236, 0.4);
+  font-weight: rgba(0, 0, 0, 0.4);
   color: normal;
   -webkit-box-shadow: 1px 1px 0px 1px #FAF9EC;
           box-shadow: 1px 1px 0px 1px #FAF9EC;
@@ -275,7 +275,7 @@
 .ui.definition.table tr td.definition {
   background: rgba(0, 0, 0, 0.03);
   font-weight: bold;
-  color: rgba(250, 249, 236, 0.95);
+  color: rgba(0, 0, 0, 0.95);
   text-transform: '';
   -webkit-box-shadow: '';
           box-shadow: '';
@@ -503,7 +503,7 @@
 .ui.selectable.table tbody tr:hover,
 .ui.table tbody tr td.selectable:hover {
   background: rgba(0, 0, 0, 0.05) !important;
-  color: rgba(250, 249, 236, 0.95) !important;
+  color: rgba(0, 0, 0, 0.95) !important;
 }
 .ui.selectable.inverted.table tbody tr:hover,
 .ui.inverted.table tbody tr td.selectable:hover {
@@ -620,7 +620,7 @@
 /* Allow striped active hover */
 .ui.striped.selectable.selectable.selectable.table tbody tr.active:hover {
   background: #EFEFEF !important;
-  color: rgba(250, 249, 236, 0.95) !important;
+  color: rgba(0, 0, 0, 0.95) !important;
 }
 
 /*--------------
@@ -925,13 +925,13 @@
 }
 .ui.sortable.table thead th:hover {
   background: rgba(0, 0, 0, 0.05);
-  color: rgba(250, 249, 236, 0.8);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 /* Sorted */
 .ui.sortable.table thead th.sorted {
   background: rgba(0, 0, 0, 0.05);
-  color: rgba(250, 249, 236, 0.95);
+  color: rgba(0, 0, 0, 0.95);
 }
 .ui.sortable.table thead th.sorted:after {
   display: inline-block;
@@ -940,7 +940,7 @@
 /* Sorted Hover */
 .ui.sortable.table thead th.sorted:hover {
   background: rgba(0, 0, 0, 0.05);
-  color: rgba(250, 249, 236, 0.95);
+  color: rgba(0, 0, 0, 0.95);
 }
 
 /* Inverted */

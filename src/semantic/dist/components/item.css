@@ -142,7 +142,7 @@
   margin: -0.21425em 0em 0em;
   font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
-  color: rgba(250, 249, 236, 0.85);
+  color: rgba(0, 0, 0, 0.85);
 }
 
 /* Default Header Size */
@@ -238,7 +238,7 @@
 
 /* Header */
 .ui.items > .item > .content > a.header {
-  color: rgba(250, 249, 236, 0.85);
+  color: rgba(0, 0, 0, 0.85);
 }
 .ui.items > .item > .content > a.header:hover {
   color: #1fbaca;
@@ -246,7 +246,7 @@
 
 /* Meta */
 .ui.items > .item .meta > a:not(.ui) {
-  color: rgba(250, 249, 236, 0.4);
+  color: rgba(0, 0, 0, 0.4);
 }
 .ui.items > .item .meta > a:not(.ui):hover {
   color: #FAF9EC;
@@ -306,7 +306,7 @@
   padding: 0em 0em 0em;
   top: 0em;
   left: 0em;
-  color: rgba(250, 249, 236, 0.4);
+  color: rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: none;
           box-shadow: none;
   -webkit-transition: color 0.1s ease;
