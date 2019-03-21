@@ -19,7 +19,7 @@ const Opponents = (props) => {
 
   return(
     <Grid.Column width={2}>
-      <h1>Opponents</h1>
+      <h1>Enemies</h1>
       {showOpponents()}
     </Grid.Column>
   )

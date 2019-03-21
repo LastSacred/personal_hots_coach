@@ -21,23 +21,14 @@ const Navbar = (props) => {
       }
 
       return (
-        // <Link to='/settings'>
-          <Dropdown
-            item
-            simple
-            text={props.loggedIn}
-            direction='right'
-            options={options}
-            onChange={handleChange}
-          />
-          // <Menu.Item
-          //   name=''
-          //   color={'violet'}
-          //   active={props.page === 'settings'}
-          // >
-          //   {props.loggedIn}
-          // </Menu.Item>
-        // </Link>
+        <Dropdown
+          item
+          simple
+          text={props.loggedIn}
+          direction='right'
+          options={options}
+          onChange={handleChange}
+        />
       )
     } else {
       return(
