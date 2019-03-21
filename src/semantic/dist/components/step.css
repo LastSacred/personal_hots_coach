@@ -72,7 +72,7 @@
   margin: 0em 0em;
   padding: 1.14285714em 2em;
   background: #FAF9EC;
-  color: #DB2828;
+  color: #FAF9EC;
   -webkit-box-shadow: none;
           box-shadow: none;
   border-radius: 0em;
@@ -147,7 +147,7 @@
 .ui.steps .step .description {
   font-weight: normal;
   font-size: 0.92857143em;
-  color: #DB2828;
+  color: #FAF9EC;
 }
 .ui.steps .step > .description {
   width: 100%;
@@ -389,7 +389,7 @@
 .ui.steps a.active.step:hover {
   cursor: pointer;
   background: #DCDDDE;
-  color: #DB2828;
+  color: #FAF9EC;
 }
 
 /* Completed */
