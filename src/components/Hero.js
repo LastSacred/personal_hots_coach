@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Image, Button } from 'semantic-ui-react'
+import { Image, Button, Section } from 'semantic-ui-react'
 
 import emptyIcon from '../assets/empty.jpg'
 import { getHeroes } from '../services/api'
@@ -58,7 +58,7 @@ const Hero = (props) => {
     return (
       <Button.Group vertical onClick={handleButtonClick} style={{position: 'absolute', top: 1, left: "16%"}} >
         <Button compact color='grey'>Ban</Button>
-        <Button compact color='green'>Team</Button>
+        <Button compact color='blue'>Team</Button>
         <Button compact color='red'>Enemy</Button>
       </Button.Group>
     )
@@ -73,10 +73,26 @@ const Hero = (props) => {
     }
   }
 
+  const boxShadowValue = () => {
+    let value = '0 0 1px 0px #fff'
+    if (props.parent !== 'PickList' && props.parent !== 'HeroesContainer' && props.hero) value = '0 0 1px 1px #fff'
+    if (props.parent === 'Team') value += ', 0 0 20px 7px #4478C4'
+    if (props.parent === 'Bans') value += ', 0 0 20px 7px #7C7783'
+    if (props.parent === 'Opponents') value += ', 0 0 20px 7px #D80808'
+
+    return value
+  }
+
   return(
     <div style={style()}>
       <Image
-        style={{margin: 'auto'}}
+        style={
+          {
+            margin: 'auto',
+            boxShadow: boxShadowValue()
+          }
+        }
+        bordered
         onClick={handleClick}
         src={hero.icon_url}
         size='tiny'

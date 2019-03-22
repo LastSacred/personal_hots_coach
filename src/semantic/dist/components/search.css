@@ -27,7 +27,7 @@
   line-height: 1.21428571em;
   padding: 0.67857143em 1em;
   font-size: 1em;
-  background: #7C7783;
+  background: #30214C;
   border: 1px solid rgba(100, 53, 201, 0.45);
   color: #FAF9EC;
   -webkit-box-shadow: 0em 0em 0em 0em transparent inset;
@@ -178,7 +178,7 @@
 
 .ui.search > .prompt:focus {
   border-color: rgba(100, 53, 201, 0.65);
-  background: #7C7783;
+  background: #30214C;
   color: rgba(250, 249, 236, 0.95);
 }
 
@@ -302,7 +302,7 @@
 }
 .ui.search.selection > .icon.input > .remove.icon:hover {
   opacity: 1;
-  color: #DB2828;
+  color: #D80808;
 }
 
 /*--------------

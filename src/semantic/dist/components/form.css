@@ -107,7 +107,7 @@
   line-height: 1.21428571em;
   padding: 0.67857143em 1em;
   font-size: 1em;
-  background: #7C7783;
+  background: #30214C;
   border: 1px solid rgba(100, 53, 201, 0.45);
   color: #FAF9EC;
   border-radius: 0.28571429rem;
@@ -123,7 +123,7 @@
   -webkit-appearance: none;
   tap-highlight-color: rgba(255, 255, 255, 0);
   padding: 0.78571429em 1em;
-  background: #7C7783;
+  background: #30214C;
   border: 1px solid rgba(100, 53, 201, 0.45);
   outline: none;
   color: #FAF9EC;
@@ -371,7 +371,7 @@
   color: rgba(250, 249, 236, 0.95);
   border-color: #85B7D9;
   border-radius: 0.28571429rem;
-  background: #7C7783;
+  background: #30214C;
   -webkit-box-shadow: 0px 0em 0em 0em rgba(100, 53, 201, 0.65) inset;
           box-shadow: 0px 0em 0em 0em rgba(100, 53, 201, 0.65) inset;
 }
@@ -379,7 +379,7 @@
   color: rgba(250, 249, 236, 0.95);
   border-color: #85B7D9;
   border-radius: 0.28571429rem;
-  background: #7C7783;
+  background: #30214C;
   -webkit-box-shadow: 0px 0em 0em 0em rgba(100, 53, 201, 0.65) inset;
           box-shadow: 0px 0em 0em 0em rgba(100, 53, 201, 0.65) inset;
   -webkit-appearance: none;
@@ -681,7 +681,7 @@
 .ui.form .required.field > .checkbox:after {
   margin: -0.2em 0em 0em 0.2em;
   content: '*';
-  color: #DB2828;
+  color: #D80808;
 }
 .ui.form .required.fields:not(.grouped) > .field > label:after,
 .ui.form .required.fields.grouped > label:after,
@@ -733,7 +733,7 @@
 .ui.inverted.form input[type="text"],
 .ui.inverted.form input[type="file"],
 .ui.inverted.form input[type="url"] {
-  background: #7C7783;
+  background: #30214C;
   border-color: rgba(255, 255, 255, 0.1);
   color: #FAF9EC;
   -webkit-box-shadow: none;
