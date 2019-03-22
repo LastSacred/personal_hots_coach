@@ -127,7 +127,7 @@
 /* Dropdown in Menu */
 @dropdownMenuBoxShadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
 
-@dropdownBackground: @lightBlack;
+@dropdownBackground: @purple;
 @dropdownMenuDistance: 0em;
 @dropdownMenuBorderRadius: @borderRadius;
 

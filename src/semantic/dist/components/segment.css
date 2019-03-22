@@ -654,10 +654,10 @@
 
 /* Purple */
 .ui.purple.segment:not(.inverted) {
-  border-top: 2px solid #A333C8 !important;
+  border-top: 2px solid #30214C !important;
 }
 .ui.inverted.purple.segment {
-  background-color: #A333C8 !important;
+  background-color: #30214C !important;
   color: #FAF9EC !important;
 }
 
@@ -736,7 +736,7 @@
 }
 .ui.inverted.segment,
 .ui.primary.inverted.segment {
-  background: #1E0D3D;
+  background: #30214C;
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -761,7 +761,7 @@
 /* Secondary */
 .ui.secondary.segment {
   background: #F3F4F5;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(250, 249, 236, 0.6);
 }
 .ui.secondary.inverted.segment {
   background: #471f91 -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2)));
@@ -773,7 +773,7 @@
 /* Tertiary */
 .ui.tertiary.segment {
   background: #DCDDDE;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(250, 249, 236, 0.6);
 }
 .ui.tertiary.inverted.segment {
   background: #662cd0 -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.35)), to(rgba(255, 255, 255, 0.35)));

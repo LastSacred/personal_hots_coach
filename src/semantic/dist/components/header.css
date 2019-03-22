@@ -43,7 +43,7 @@
   margin: 0em;
   font-size: 1rem;
   line-height: 1.2em;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(250, 249, 236, 0.6);
 }
 
 /*--------------
@@ -301,17 +301,17 @@ h5.ui.header .sub.header {
   color: rgba(255, 255, 255, 0.8);
 }
 .ui.inverted.attached.header {
-  background: #545454 -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
-  background: #545454 -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-  background: #545454 linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  background: #554E61 -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
+  background: #554E61 -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  background: #554E61 linear-gradient(transparent, rgba(0, 0, 0, 0.05));
   -webkit-box-shadow: none;
           box-shadow: none;
   border-color: transparent;
 }
 .ui.inverted.block.header {
-  background: #545454 -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
-  background: #545454 -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-  background: #545454 linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  background: #554E61 -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
+  background: #554E61 -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  background: #554E61 linear-gradient(transparent, rgba(0, 0, 0, 0.05));
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -487,13 +487,13 @@ a.ui.inverted.violet.header:hover {
 /*--- Purple ---*/
 
 .ui.purple.header {
-  color: #A333C8 !important;
+  color: #30214C !important;
 }
 a.ui.purple.header:hover {
-  color: #9627ba !important;
+  color: #24183c !important;
 }
 .ui.purple.dividing.header {
-  border-bottom: 2px solid #A333C8;
+  border-bottom: 2px solid #30214C;
 }
 
 /* Inverted */

@@ -124,12 +124,12 @@
   font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 1em;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(250, 249, 236, 0.85);
 }
 .ui.search > .results .result .description {
   margin-top: 0;
   font-size: 0.92857143em;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(250, 249, 236, 0.4);
 }
 .ui.search > .results .result .price {
   float: right;
@@ -179,7 +179,7 @@
 .ui.search > .prompt:focus {
   border-color: rgba(100, 53, 201, 0.65);
   background: #7C7783;
-  color: rgba(0, 0, 0, 0.95);
+  color: rgba(250, 249, 236, 0.95);
 }
 
 /*--------------------
@@ -248,10 +248,10 @@
           box-shadow: none;
 }
 .ui.search > .results .result.active .title {
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(250, 249, 236, 0.85);
 }
 .ui.search > .results .result.active .description {
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(250, 249, 236, 0.85);
 }
 
 /*--------------------
@@ -351,7 +351,7 @@
   font-size: 1em;
   padding: 0.4em 1em;
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(250, 249, 236, 0.4);
   border-bottom: 1px solid rgba(100, 53, 201, 0.4);
 }
 

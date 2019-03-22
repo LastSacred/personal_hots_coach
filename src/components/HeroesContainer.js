@@ -12,7 +12,7 @@ const HeroesContainer = (props) => {
   }
 
   return(
-    <Segment style={{overflow: 'auto', height: 400}}>
+    <Segment inverted color='purple' style={{overflow: 'auto', height: 400}}>
       <Grid>
         {showHeroes()}
       </Grid>

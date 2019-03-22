@@ -111,13 +111,13 @@ a.ui.nag {
 .ui.inverted.nags .nag,
 .ui.inverted.nag {
   background-color: #F3F4F5;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(250, 249, 236, 0.85);
 }
 .ui.inverted.nags .nag .close,
 .ui.inverted.nags .nag .title,
 .ui.inverted.nag .close,
 .ui.inverted.nag .title {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(250, 249, 236, 0.4);
 }
 
 

@@ -132,7 +132,7 @@
 }
 .ui.checkbox label:hover,
 .ui.checkbox + label:hover {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(250, 249, 236, 0.8);
 }
 
 /*--------------
@@ -146,10 +146,10 @@
 }
 .ui.checkbox .box:active::after,
 .ui.checkbox label:active::after {
-  color: rgba(0, 0, 0, 0.95);
+  color: rgba(250, 249, 236, 0.95);
 }
 .ui.checkbox input:active ~ label {
-  color: rgba(0, 0, 0, 0.95);
+  color: rgba(250, 249, 236, 0.95);
 }
 
 /*--------------
@@ -163,10 +163,10 @@
 }
 .ui.checkbox input:focus ~ .box:after,
 .ui.checkbox input:focus ~ label:after {
-  color: rgba(0, 0, 0, 0.95);
+  color: rgba(250, 249, 236, 0.95);
 }
 .ui.checkbox input:focus ~ label {
-  color: rgba(0, 0, 0, 0.95);
+  color: rgba(250, 249, 236, 0.95);
 }
 
 /*--------------
@@ -181,7 +181,7 @@
 .ui.checkbox input:checked ~ .box:after,
 .ui.checkbox input:checked ~ label:after {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.95);
+  color: rgba(250, 249, 236, 0.95);
 }
 
 /*--------------
@@ -196,7 +196,7 @@
 .ui.checkbox input:not([type=radio]):indeterminate ~ .box:after,
 .ui.checkbox input:not([type=radio]):indeterminate ~ label:after {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.95);
+  color: rgba(250, 249, 236, 0.95);
 }
 
 /*--------------
@@ -214,7 +214,7 @@
 .ui.checkbox input:not([type=radio]):indeterminate:focus ~ label:after,
 .ui.checkbox input:checked:focus ~ .box:after,
 .ui.checkbox input:checked:focus ~ label:after {
-  color: rgba(0, 0, 0, 0.95);
+  color: rgba(250, 249, 236, 0.95);
 }
 
 /*--------------
@@ -320,7 +320,7 @@
 }
 .ui.radio.checkbox input:focus ~ .box:after,
 .ui.radio.checkbox input:focus ~ label:after {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(250, 249, 236, 0.95);
 }
 
 /* Indeterminate */
@@ -336,7 +336,7 @@
 }
 .ui.radio.checkbox input:checked ~ .box:after,
 .ui.radio.checkbox input:checked ~ label:after {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(250, 249, 236, 0.95);
 }
 
 /* Active Focus */
@@ -346,7 +346,7 @@
 }
 .ui.radio.checkbox input:focus:checked ~ .box:after,
 .ui.radio.checkbox input:focus:checked ~ label:after {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(250, 249, 236, 0.95);
 }
 
 /*--------------
@@ -368,7 +368,7 @@
 .ui.slider.checkbox label {
   padding-left: 4.5rem;
   line-height: 1rem;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(250, 249, 236, 0.4);
 }
 
 /* Line */
@@ -425,7 +425,7 @@
 /* Hover */
 .ui.slider.checkbox .box:hover,
 .ui.slider.checkbox label:hover {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(250, 249, 236, 0.8);
 }
 .ui.slider.checkbox .box:hover::before,
 .ui.slider.checkbox label:hover::before {
@@ -435,11 +435,11 @@
 /* Active */
 .ui.slider.checkbox input:checked ~ .box,
 .ui.slider.checkbox input:checked ~ label {
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: rgba(250, 249, 236, 0.95) !important;
 }
 .ui.slider.checkbox input:checked ~ .box:before,
 .ui.slider.checkbox input:checked ~ label:before {
-  background-color: #545454 !important;
+  background-color: #554E61 !important;
 }
 .ui.slider.checkbox input:checked ~ .box:after,
 .ui.slider.checkbox input:checked ~ label:after {
@@ -449,7 +449,7 @@
 /* Active Focus */
 .ui.slider.checkbox input:focus:checked ~ .box,
 .ui.slider.checkbox input:focus:checked ~ label {
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: rgba(250, 249, 236, 0.95) !important;
 }
 .ui.slider.checkbox input:focus:checked ~ .box:before,
 .ui.slider.checkbox input:focus:checked ~ label:before {
@@ -545,7 +545,7 @@
 /* Active */
 .ui.toggle.checkbox input:checked ~ .box,
 .ui.toggle.checkbox input:checked ~ label {
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: rgba(250, 249, 236, 0.95) !important;
 }
 .ui.toggle.checkbox input:checked ~ .box:before,
 .ui.toggle.checkbox input:checked ~ label:before {
@@ -561,7 +561,7 @@
 /* Active Focus */
 .ui.toggle.checkbox input:focus:checked ~ .box,
 .ui.toggle.checkbox input:focus:checked ~ label {
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: rgba(250, 249, 236, 0.95) !important;
 }
 .ui.toggle.checkbox input:focus:checked ~ .box:before,
 .ui.toggle.checkbox input:focus:checked ~ label:before {

@@ -228,7 +228,7 @@
 @teal             : #00B5AD;
 @blue             : #2185D0;
 @violet           : #6435C9;
-@purple           : #A333C8;
+@purple           : #30214C;
 @pink             : #E03997;
 @brown            : #A5673F;
 @grey             : #7C7783;
@@ -247,7 +247,7 @@
 @lightPink        : #FF8EDF;
 @lightBrown       : #D67C1C;
 @lightGrey        : #DCDDDE;
-@lightBlack       : #545454;
+@lightBlack       : #554E61;
 
 /*---   Neutrals  ---*/
 @fullBlack        : #000000;
@@ -430,15 +430,15 @@
      Neutral Text
 --------------------*/
 
-@darkTextColor               : rgba(0, 0, 0, 0.85);
-@mutedTextColor              : rgba(0, 0, 0, 0.6);
-@lightTextColor              : rgba(0, 0, 0, 0.4);
+@darkTextColor               : rgba(250, 249, 236, 0.85);
+@mutedTextColor              : rgba(250, 249, 236, 0.6);
+@lightTextColor              : rgba(250, 249, 236, 0.4);
 
-@unselectedTextColor         : rgba(0, 0, 0, 0.4);
-@hoveredTextColor            : rgba(0, 0, 0, 0.8);
-@pressedTextColor            : rgba(0, 0, 0, 0.9);
-@selectedTextColor           : rgba(0, 0, 0, 0.95);
-@disabledTextColor           : rgba(0, 0, 0, 0.2);
+@unselectedTextColor         : rgba(250, 249, 236, 0.4);
+@hoveredTextColor            : rgba(250, 249, 236, 0.8);
+@pressedTextColor            : rgba(250, 249, 236, 0.9);
+@selectedTextColor           : rgba(250, 249, 236, 0.95);
+@disabledTextColor           : rgba(250, 249, 236, 0.2);
 
 @invertedTextColor           : rgba(255, 255, 255, 0.9);
 @invertedMutedTextColor      : rgba(255, 255, 255, 0.8);

@@ -124,12 +124,11 @@ class Settings extends Component {
       <Container textAlign='left'>
         {this.props.loggedIn ? null : <Redirect to="/Login" />}
         <h1>{this.props.loggedIn}</h1>
-        <h2>Battletag</h2>
+        <h2 style={{marginTop: 50}}>Battletag</h2>
         <div>{this.state.battletag}</div>
         <h2>Roster</h2>
         <div>
           <Radio
-            toggle
             label="Auto"
             checked={this.state.auto_roster}
             onClick={this.handleAutoRosterClick}

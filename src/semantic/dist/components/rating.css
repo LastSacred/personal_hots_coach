@@ -61,7 +61,7 @@
 /* Active Icon */
 .ui.rating .active.icon {
   background: transparent;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(250, 249, 236, 0.85);
 }
 
 /* Selected Icon */

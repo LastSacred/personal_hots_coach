@@ -15,7 +15,7 @@ const Maps = (props) => {
 
   return(
     <Grid.Row>
-      <Segment raised>
+      <Segment raised color ="violet">
         <Dropdown
           style={{maxWidth: 500, margin: 'auto'}}
           placeholder='Map'

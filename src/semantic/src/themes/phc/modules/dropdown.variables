@@ -280,7 +280,7 @@
 
 /* Hovered */
 @hoveredItemBackground: @transparentBlack;
-@hoveredItemColor: @selectedTextColor;
+@hoveredItemColor: @black;
 @hoveredZIndex: @menuZIndex + 2;
 
 /* Default Text */
@@ -299,7 +299,7 @@
 
 /* Selected */
 @selectedBackground: @subtleTransparentBlack;
-@selectedColor: @selectedTextColor;
+@selectedColor: @black;
 
 /* Error */
 @errorLabelBackground: #EACBCB;

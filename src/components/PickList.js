@@ -14,7 +14,7 @@ const PickList = (props) => {
 
   return(
     <Segment>
-      <Grid style={{overflow:'scroll hidden',height: 140, flexWrap: 'nowrap'}}>
+      <Grid style={{overflow:'scroll hidden',height: 140, flexWrap: 'nowrap', textAlign: 'center'}}>
         {showHeroes()}
       </Grid>
     </Segment>
