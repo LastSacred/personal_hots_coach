@@ -51,11 +51,11 @@
     Brand Colors
 --------------------*/
 
-@primaryColor        : @blue;
-@secondaryColor      : @black;
+@primaryColor        : @teal;
+@secondaryColor      : @white;
 
-@lightPrimaryColor   : @lightBlue;
-@lightSecondaryColor : @lightBlack;
+@lightPrimaryColor   : @teal;
+@lightSecondaryColor : @white;
 
 /*--------------
   Page Heading
@@ -81,8 +81,8 @@
 @inputPadding           : @inputVerticalPadding @inputHorizontalPadding;
 
 /* Input Text Color */
-@inputColor: @white;
-@inputPlaceholderColor: darken(@inputColor, 75);
+@inputColor: @textColor;
+@inputPlaceholderColor: darken(@inputColor, 70);
 @inputPlaceholderFocusColor: @inputColor;
 
 /* Line Height Default For Inputs in Browser (Descenders are 17px at 14px base em) */
@@ -93,10 +93,10 @@
 --------------------*/
 
 /* Used on inputs, textarea etc */
-@focusedFormBorderColor: #85B7D9;
+@focusedFormBorderColor: @teal;
 
 /* Used on dropdowns, other larger blocks */
-@focusedFormMutedBorderColor: #96C8DA;
+@focusedFormMutedBorderColor: @teal;
 
 /*-------------------
         Sizes
@@ -138,7 +138,7 @@
        Links
 --------------------*/
 
-@linkColor           : #4ABCC8;
+@linkColor           : @teal;
 @linkUnderline       : none;
 @linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
 @linkHoverUnderline  : @linkUnderline;
@@ -186,8 +186,8 @@
 @loaderSize              : @relativeBig;
 @loaderSpeed             : 0.6s;
 @loaderLineWidth         : 0.2em;
-@loaderFillColor         : rgba(0, 0, 0, 0.1);
-@loaderLineColor         : @grey;
+@loaderFillColor         : rgba(255, 255, 255, 0.1);
+@loaderLineColor         : @white;
 
 @invertedLoaderFillColor : rgba(255, 255, 255, 0.15);
 @invertedLoaderLineColor : @white;
@@ -225,7 +225,7 @@
 @yellow           : #FBBD08;
 @olive            : #B5CC18;
 @green            : #21BA45;
-@teal             : #00B5AD;
+@teal             : #4ABCC8;
 @blue             : #4478C4;
 @violet           : #6435C9;
 @purple           : #30214C;
