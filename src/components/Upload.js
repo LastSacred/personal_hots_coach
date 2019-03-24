@@ -70,11 +70,13 @@ class Upload extends Component {
               success
               header={this.state.message[1]}
               content={this.state.message[2]}
+              style={{textShadow: 'none'}}
             />
             <Message
               warning
               header={this.state.message[1]}
               content={this.state.message[2]}
+              style={{textShadow: 'none'}}
             />
             <Button type='submit'>Submit</Button>
           </Form>

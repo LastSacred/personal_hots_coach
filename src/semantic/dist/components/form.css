@@ -479,7 +479,7 @@
 .ui.form .field.error input[type="text"],
 .ui.form .field.error input[type="file"],
 .ui.form .field.error input[type="url"] {
-  background: #FFF6F6;
+  background: #D80808;
   border-color: #E0B4B4;
   color: #9F3A38;
   border-radius: '';
@@ -522,7 +522,7 @@
 .ui.form .field.error .ui.dropdown,
 .ui.form .field.error .ui.dropdown .text,
 .ui.form .field.error .ui.dropdown .item {
-  background: #FFF6F6;
+  background: #D80808;
   color: #9F3A38;
 }
 .ui.form .fields.error .field .ui.dropdown,
@@ -575,7 +575,7 @@
 .ui.form .field.error .checkbox:not(.toggle):not(.slider) label:before,
 .ui.form .fields.error .field .checkbox:not(.toggle):not(.slider) .box:before,
 .ui.form .field.error .checkbox:not(.toggle):not(.slider) .box:before {
-  background: #FFF6F6;
+  background: #D80808;
   border-color: #E0B4B4;
 }
 .ui.form .fields.error .field .checkbox label:after,

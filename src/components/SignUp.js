@@ -82,6 +82,7 @@ class SignUp extends Component{
               error
               header='Errors'
               list={this.state.errors}
+              style={{textShadow: 'none'}}
             />
             <Button type='submit'>Submit</Button>
           </Form>
