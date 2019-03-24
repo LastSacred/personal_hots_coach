@@ -6,7 +6,7 @@ import { Container } from 'semantic-ui-react'
 const Stats = (props) => {
   return(
     <Container>
-      {props.loggedIn ? null : <Redirect to="/Login" />}
+      {props.loggedIn ? null : <Redirect to="/login" />}
       <h1>Stats</h1>
     </Container>
   )

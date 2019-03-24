@@ -31,7 +31,7 @@ class Draft extends Component {
   render() {
     return(
         <Grid>
-          {this.props.loggedIn ? null : <Redirect to="/Login" />}
+          {this.props.loggedIn ? null : <Redirect to="/login" />}
         <Bans />
           <Grid.Row>
             <Team />

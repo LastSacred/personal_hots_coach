@@ -1,8 +1,11 @@
+body > #root > div {
+  height: 100vh;
+}
+
 .App {
   text-align: center;
   background-image: url("./assets/background02.jpg");
   background-size: cover;
-  height: 1000px;
 }
 
 .App-logo {
