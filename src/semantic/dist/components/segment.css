@@ -516,7 +516,7 @@
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   border-radius: 500rem;
-  border-color: #7C7783 rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+  border-color: #FAF9EC rgba(255, 255, 255, 0.1) rgba(255, 255, 255, 0.1) rgba(255, 255, 255, 0.1);
   border-style: solid;
   border-width: 0.2em;
   -webkit-box-shadow: 0px 0px 0px 1px transparent;
@@ -627,10 +627,10 @@
 
 /* Teal */
 .ui.teal.segment:not(.inverted) {
-  border-top: 2px solid #00B5AD !important;
+  border-top: 2px solid #4ABCC8 !important;
 }
 .ui.inverted.teal.segment {
-  background-color: #00B5AD !important;
+  background-color: #4ABCC8 !important;
   color: #FAF9EC !important;
 }
 

@@ -688,10 +688,10 @@
 
 /* Teal */
 .ui.teal.table {
-  border-top: 0.2em solid #00B5AD;
+  border-top: 0.2em solid #4ABCC8;
 }
 .ui.inverted.teal.table {
-  background-color: #00B5AD !important;
+  background-color: #4ABCC8 !important;
   color: #FAF9EC !important;
 }
 

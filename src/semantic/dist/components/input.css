@@ -58,13 +58,13 @@
 
 /* browsers require these rules separate */
 .ui.input > input::-webkit-input-placeholder {
-  color: #524e16;
+  color: #66611b;
 }
 .ui.input > input::-moz-placeholder {
-  color: #524e16;
+  color: #66611b;
 }
 .ui.input > input:-ms-input-placeholder {
-  color: #524e16;
+  color: #66611b;
 }
 
 
@@ -112,7 +112,7 @@
   width: 1.28571429em;
   height: 1.28571429em;
   border-radius: 500rem;
-  border: 0.2em solid rgba(0, 0, 0, 0.1);
+  border: 0.2em solid rgba(255, 255, 255, 0.1);
 }
 .ui.loading.loading.input > i.icon:after {
   position: absolute;
@@ -127,7 +127,7 @@
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   border-radius: 500rem;
-  border-color: #7C7783 transparent transparent;
+  border-color: #FAF9EC transparent transparent;
   border-style: solid;
   border-width: 0.2em;
   -webkit-box-shadow: 0px 0px 0px 1px transparent;
@@ -140,7 +140,7 @@
 
 .ui.input.focus > input,
 .ui.input > input:focus {
-  border-color: #85B7D9;
+  border-color: #4ABCC8;
   background: #30214C;
   color: rgba(250, 249, 236, 0.8);
   -webkit-box-shadow: none;
@@ -333,7 +333,7 @@
   border-left-color: transparent;
 }
 .ui.labeled.input:not([class*="corner labeled"]) .label:first-child + input:focus {
-  border-left-color: #85B7D9;
+  border-left-color: #4ABCC8;
 }
 
 /* Regular Label on Right */
@@ -347,7 +347,7 @@
   border-bottom-left-radius: 0px;
 }
 .ui[class*="right labeled"].input > input:focus {
-  border-right-color: #85B7D9 !important;
+  border-right-color: #4ABCC8 !important;
 }
 
 /* Corner Label */
@@ -432,7 +432,7 @@
 
 /* Input Focus */
 .ui.action.input:not([class*="left action"]) > input:focus {
-  border-right-color: #85B7D9 !important;
+  border-right-color: #4ABCC8 !important;
 }
 
 /* Button on Left */
@@ -454,7 +454,7 @@
 
 /* Input Focus */
 .ui[class*="left action"].input > input:focus {
-  border-left-color: #85B7D9 !important;
+  border-left-color: #4ABCC8 !important;
 }
 
 /*--------------------

@@ -578,14 +578,14 @@ a.ui.card:hover,
 .ui.teal.cards > .card,
 .ui.cards > .teal.card,
 .ui.teal.card {
-  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #00B5AD, 0px 1px 3px 0px #D4D4D5;
-          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #00B5AD, 0px 1px 3px 0px #D4D4D5;
+  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #4ABCC8, 0px 1px 3px 0px #D4D4D5;
+          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #4ABCC8, 0px 1px 3px 0px #D4D4D5;
 }
 .ui.teal.cards > .card:hover,
 .ui.cards > .teal.card:hover,
 .ui.teal.card:hover {
-  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #009c95, 0px 1px 3px 0px #BCBDBD;
-          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #009c95, 0px 1px 3px 0px #BCBDBD;
+  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #33b7c5, 0px 1px 3px 0px #BCBDBD;
+          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #33b7c5, 0px 1px 3px 0px #BCBDBD;
 }
 
 /* Blue */

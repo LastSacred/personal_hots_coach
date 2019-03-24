@@ -159,7 +159,7 @@
 .ui.checkbox input:focus ~ .box:before,
 .ui.checkbox input:focus ~ label:before {
   background: #FAF9EC;
-  border-color: #96C8DA;
+  border-color: #4ABCC8;
 }
 .ui.checkbox input:focus ~ .box:after,
 .ui.checkbox input:focus ~ label:after {
@@ -208,7 +208,7 @@
 .ui.checkbox input:checked:focus ~ .box:before,
 .ui.checkbox input:checked:focus ~ label:before {
   background: #FAF9EC;
-  border-color: #96C8DA;
+  border-color: #4ABCC8;
 }
 .ui.checkbox input:not([type=radio]):indeterminate:focus ~ .box:after,
 .ui.checkbox input:not([type=radio]):indeterminate:focus ~ label:after,
@@ -418,7 +418,7 @@
 /* Focus */
 .ui.slider.checkbox input:focus ~ .box:before,
 .ui.slider.checkbox input:focus ~ label:before {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
   border: none;
 }
 
@@ -492,7 +492,7 @@
           transform: none;
   border: none;
   top: 0rem;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   -webkit-box-shadow: none;
           box-shadow: none;
   width: 3.5rem;
@@ -531,14 +531,14 @@
 /* Focus */
 .ui.toggle.checkbox input:focus ~ .box:before,
 .ui.toggle.checkbox input:focus ~ label:before {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
   border: none;
 }
 
 /* Hover */
 .ui.toggle.checkbox .box:hover::before,
 .ui.toggle.checkbox label:hover::before {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
   border: none;
 }
 
@@ -549,7 +549,7 @@
 }
 .ui.toggle.checkbox input:checked ~ .box:before,
 .ui.toggle.checkbox input:checked ~ label:before {
-  background-color: #4478C4 !important;
+  background-color: #4ABCC8 !important;
 }
 .ui.toggle.checkbox input:checked ~ .box:after,
 .ui.toggle.checkbox input:checked ~ label:after {
@@ -565,7 +565,7 @@
 }
 .ui.toggle.checkbox input:focus:checked ~ .box:before,
 .ui.toggle.checkbox input:focus:checked ~ label:before {
-  background-color: #2a63b5 !important;
+  background-color: #2ab1bf !important;
 }
 
 

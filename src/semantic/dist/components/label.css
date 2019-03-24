@@ -715,16 +715,16 @@ a.ui.basic.green.label:hover {
 
 .ui.teal.labels .label,
 .ui.teal.label {
-  background-color: #00B5AD !important;
-  border-color: #00B5AD !important;
+  background-color: #4ABCC8 !important;
+  border-color: #4ABCC8 !important;
   color: #FAF9EC !important;
 }
 
 /* Link */
 .ui.teal.labels .label:hover,
 a.ui.teal.label:hover {
-  background-color: #009c95 !important;
-  border-color: #009c95 !important;
+  background-color: #33b7c5 !important;
+  border-color: #33b7c5 !important;
   color: #FAF9EC !important;
 }
 
@@ -736,20 +736,20 @@ a.ui.teal.label:hover {
 
 /* Ribbon */
 .ui.teal.ribbon.label {
-  border-color: #00827c !important;
+  border-color: #34a0ab !important;
 }
 
 /* Basic */
 .ui.basic.teal.label {
   background: none #FAF9EC !important;
-  color: #00B5AD !important;
-  border-color: #00B5AD !important;
+  color: #4ABCC8 !important;
+  border-color: #4ABCC8 !important;
 }
 .ui.basic.teal.labels a.label:hover,
 a.ui.basic.teal.label:hover {
   background-color: #FAF9EC !important;
-  color: #009c95 !important;
-  border-color: #009c95 !important;
+  color: #33b7c5 !important;
+  border-color: #33b7c5 !important;
 }
 
 /*--- Blue ---*/

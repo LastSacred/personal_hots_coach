@@ -314,13 +314,13 @@
 
 /* browsers require these rules separate */
 .ui.form ::-webkit-input-placeholder {
-  color: #524e16;
+  color: #66611b;
 }
 .ui.form :-ms-input-placeholder {
-  color: #524e16 !important;
+  color: #66611b !important;
 }
 .ui.form ::-moz-placeholder {
-  color: #524e16;
+  color: #66611b;
 }
 .ui.form :focus::-webkit-input-placeholder {
   color: #FAF9EC;
@@ -369,7 +369,7 @@
 .ui.form input[type="file"]:focus,
 .ui.form input[type="url"]:focus {
   color: rgba(250, 249, 236, 0.95);
-  border-color: #85B7D9;
+  border-color: #4ABCC8;
   border-radius: 0.28571429rem;
   background: #30214C;
   -webkit-box-shadow: 0px 0em 0em 0em rgba(100, 53, 201, 0.65) inset;
@@ -377,7 +377,7 @@
 }
 .ui.form textarea:focus {
   color: rgba(250, 249, 236, 0.95);
-  border-color: #85B7D9;
+  border-color: #4ABCC8;
   border-radius: 0.28571429rem;
   background: #30214C;
   -webkit-box-shadow: 0px 0em 0em 0em rgba(100, 53, 201, 0.65) inset;
@@ -635,7 +635,7 @@
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   border-radius: 500rem;
-  border-color: #7C7783 rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+  border-color: #FAF9EC rgba(255, 255, 255, 0.1) rgba(255, 255, 255, 0.1) rgba(255, 255, 255, 0.1);
   border-style: solid;
   border-width: 0.2em;
   -webkit-box-shadow: 0px 0px 0px 1px transparent;
