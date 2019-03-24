@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { Container, Radio, Dropdown, Form, Button } from 'semantic-ui-react'
+import { Container, Radio, Dropdown, Form, Button, Segment } from 'semantic-ui-react'
 
 import { getUser, postDraft, postMatches, updateUser, getHeroes } from '../services/api.js'
 import PickList from './PickList'
@@ -126,16 +126,19 @@ class Settings extends Component {
         <h1>{this.props.loggedIn}</h1>
         <h2 style={{marginTop: 50}}>Battletag</h2>
         <div>{this.state.battletag}</div>
-        <h2>Roster</h2>
-        <div>
-          <Radio
-            label="Auto"
-            checked={this.state.auto_roster}
-            onClick={this.handleAutoRosterClick}
-          />
-          {this.showAddRemoveHeroes()}
-        </div>
-        <PickList />
+        <Segment color="violet">
+          <h2>Roster</h2>
+          <div>
+            <Radio
+              toggle
+              label="Auto"
+              checked={this.state.auto_roster}
+              onClick={this.handleAutoRosterClick}
+            />
+            {this.showAddRemoveHeroes()}
+          </div>
+          <PickList />
+        </Segment>
       </Container>
     )
   }
