@@ -45,7 +45,7 @@ class Upload extends Component {
     return(
       <Container>
         {this.props.loggedIn ? null : <Redirect to="/login" />}
-        <Segment compact raised color='violet'>
+        <Segment compact raised color='violet' style={{margin: 'auto'}}>
         <h1>Upload</h1>
           <Form
             success={this.state.message[0] === 'success'}
@@ -54,7 +54,6 @@ class Upload extends Component {
             onSubmit={this.handleSubmit}
           >
             <Form.Field>
-              <label>Files</label>
               <input
                 name='files'
                 type="file"

@@ -44,7 +44,7 @@ class SignUp extends Component{
     return(
       <Container>
         {this.props.loggedIn ? <Redirect to="/" /> : null}
-        <Segment compact raised color='violet'>
+        <Segment compact raised color='violet' style={{margin: 'auto'}}>
           <Form
             error={this.state.errors.length > 0}
             size='large'

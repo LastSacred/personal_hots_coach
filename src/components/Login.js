@@ -35,7 +35,7 @@ class Login extends Component{
     return(
       <Container>
         {this.props.loggedIn ? <Redirect to="/" /> : null}
-        <Segment compact raised color='violet'>
+        <Segment compact raised color='violet' style={{margin: 'auto'}}>
           <Form size='large' onSubmit={this.handleSubmit}>
             <Form.Field>
               <label>Username</label>
@@ -58,7 +58,7 @@ class Login extends Component{
             </Form.Field>
             <Button type='submit'>Login</Button>
             <Link to='/signup'>
-              <div>Sign Up</div>
+              <div style={{lineHeight: '50px'}}>Sign Up</div>
             </Link>
           </Form>
         </Segment>
