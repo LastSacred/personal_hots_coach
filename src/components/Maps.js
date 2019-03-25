@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Dropdown, Grid, Segment } from 'semantic-ui-react'
+import { Dropdown, Grid, Segment, Form } from 'semantic-ui-react'
 
 const Maps = (props) => {
   const allMaps = () => {
@@ -16,15 +16,19 @@ const Maps = (props) => {
   return(
     <Grid.Row>
       <Segment raised color ="violet">
-        <Dropdown
-          style={{maxWidth: 500, margin: 'auto'}}
-          placeholder='Map'
-          fluid
-          search
-          selection
-          options={allMaps()}
-          onChange={(event) => props.updateDraftMap(event.target.innerText)}
-        />
+        <Form>
+          <Form.Field>
+            <Dropdown
+              style={{maxWidth: 500, margin: 'auto'}}
+              placeholder='Map'
+              fluid
+              search
+              selection
+              options={allMaps()}
+              onChange={(event) => props.updateDraftMap(event.target.innerText)}
+            />
+          </Form.Field>
+        </Form>
       </Segment>
     </Grid.Row>
   )

@@ -69,11 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 # personal_hots_coach
 
 <!--
-find missing pictures
-theming
-stats
-dropdown?
-refactoring
+statsrefactoring
 replay uploader app
 parse replay files
 multi-user performance
