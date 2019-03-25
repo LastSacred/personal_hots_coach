@@ -1,75 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Personal HotS Coach
 
-## Available Scripts
+  Personal HotS Coach is an application that allows the user to upload historical Heroes of the Storm match data. It then uses this data to provide an ordered list of heroes starting with the most likely choice to result in a win during a draft based on the user's performance on the map, and with and against the heroes that have been selected so far.
 
-In the project directory, you can run:
+## What is HotS
 
-### `npm start`
+  Heroes of the Storm wiki: https://en.wikipedia.org/wiki/Heroes_of_the_Storm
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Usage
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+  While this application is structured to support multiple users, the backend, at this stage in development, can not efficiently handle the workload from many users at once. If you would like to use this software I recommend cloning both the backend and the front end, and maintaining a private version of the database. In the future, I plan to restructure the solution to manage two databases, one to receive data and replicate to the other which will serve data.
 
-### `npm test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  This is the browser frontend for the application. Personal HotS Coach Backend is also required.
 
-### `npm run build`
+#### Starting Server
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  Run `npm start` to start the front end server. If you are running the backend on the same computer you will be prompted to run the server from a different port
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Import
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  The frontend import page functions but it is not optimal. If you would like to set your user up to update from the backend.
+  After creating your user, go into the backend directory and access the console with `rails console`.
+  Type `User.find_by(name: <your_user_name>).update(replay_path: <path_to_your_hots_replay_files>)`.
+  If this is set up properly, Personal HotS Coach will automatically check for new replay files ever time you load the draft page.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# personal_hots_coach
 
 <!--
-statsrefactoring
+refactoring
+stats
 replay uploader app
 parse replay files
 multi-user performance
