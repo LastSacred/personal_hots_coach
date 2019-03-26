@@ -1,4 +1,4 @@
-const BackendUrl = 'http://localhost:3000/'
+const BackendUrl = 'https://personal-hots-coach-backend.herokuapp.com/'
 
 const login = (params) => {
   return fetch(BackendUrl + 'login', {
