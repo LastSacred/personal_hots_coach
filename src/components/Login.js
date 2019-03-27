@@ -7,10 +7,10 @@ import { login } from '../services/api'
 
 class Login extends Component{
   state = {
-    name: '',
-    password: '',
+    name: 'LastSacred',
+    password: process.env.REACT_APP_LSPASSWORD,
   }
-
+  // demopassword
   handleSubmit = (event) => {
     const name = this.state.name
 
@@ -35,6 +35,7 @@ class Login extends Component{
     return(
       <Container>
         {this.props.loggedIn ? <Redirect to="/" /> : null}
+        <h2>Leave values unchanged for a demo login</h2>
         <Segment compact raised color='violet' style={{margin: 'auto'}}>
           <Form size='large' onSubmit={this.handleSubmit}>
             <Form.Field>
