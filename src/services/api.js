@@ -1,4 +1,4 @@
-const BackendUrl = 'https://personal-hots-coach-backend.herokuapp.com/'
+const BackendUrl = process.env.REACT_APP_URL
 
 const login = (params) => {
   return fetch(BackendUrl + 'login', {
