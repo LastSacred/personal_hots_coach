@@ -48,6 +48,9 @@ const Home = (props) => {
       <Grid style={{marginTop: '100px'}}>
       {showNextSteps()}
       </Grid>
+      <h2>
+        Note: this is a demo version. Performance quality is not guaranteed. If you would like to clone your own verson of the app you can get it from <a href="https://github.com/LastSacred/personal_hots_coach">Github</a>
+      </h2>
       <p style={{width: '300px', position: 'absolute', bottom: '50px', left: '50%', marginLeft: '-150px'}}>
         Personal HotS Coach uses <a href="http://hotsapi.net">HotsApi</a>
       </p>

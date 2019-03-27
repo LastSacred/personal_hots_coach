@@ -1,4 +1,4 @@
-const BackendUrl = 'http://localhost:3000/'
+const BackendUrl = process.env.REACT_APP_URL
 
 const login = (params) => {
   return fetch(BackendUrl + 'login', {
