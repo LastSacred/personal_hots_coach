@@ -60,12 +60,7 @@ class Upload extends Component {
                 multiple
               />
             </Form.Field>
-            {
-              (this.state.message[0] === 'loading' || this.state.message[1] === "Uploaded") ?
-              <Loader active inline='centered' />
-              :
-              null
-            }
+            <Loader active={this.state.message[0] === 'loading'} inline='centered' />
             <Message
               success
               header={this.state.message[1]}
