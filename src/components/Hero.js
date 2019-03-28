@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Image, Button, Section } from 'semantic-ui-react'
+import { Image, Button } from 'semantic-ui-react'
 
 import emptyIcon from '../assets/empty.jpg'
 import { getHeroes } from '../services/api'
