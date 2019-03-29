@@ -5,7 +5,7 @@ import { Container, Radio, Dropdown, Form, Button, Segment } from 'semantic-ui-r
 
 import { getUser, postDraft, postMatches, updateUser, getHeroes } from '../services/api.js'
 import PickList from './PickList'
-
+// FIXME: Move the filter for allHeroes and pickList so it doesn't effect settings. If users heroes is empty prepopulate it with auto
 class Settings extends Component {
   state = {
     battletag: null,

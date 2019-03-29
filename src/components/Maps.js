@@ -25,7 +25,7 @@ const Maps = (props) => {
               search
               selection
               options={allMaps()}
-              onChange={(event) => props.updateDraftMap(event.target.innerText)}
+              onChange={(event) => {props.updateDraftMap(event.target.parentElement.querySelector('.selected').innerText)}}
             />
           </Form.Field>
         </Form>
