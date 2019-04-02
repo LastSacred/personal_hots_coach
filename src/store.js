@@ -41,13 +41,7 @@ function rootReducer(
       return { ...state, draft: { ...state.draft, map: action.map } }
 
     case "UPDATE_PICKLIST":
-      const pickList = action.pickList.filter(heroObj => {
-        const banNames = state.draft.bans.map(hero => hero.name)
-        const with_heroNames = state.draft.with_heroes.map(hero => hero.name)
-        const against_heroNames = state.draft.against_heroes.map(hero => hero.name)
-        return !banNames.concat(with_heroNames).concat(against_heroNames).includes(heroObj.hero.name)
-      })
-      return { ...state, pickList: pickList }
+      return { ...state, pickList: action.pickList }
 
     case "SELECT_HERO":
       return { ...state, selectedHero: action.heroName }
