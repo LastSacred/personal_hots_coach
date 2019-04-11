@@ -13,6 +13,18 @@ const Maps = (props) => {
     })
   }
 
+  const handleChange = (event) => {
+    let map
+
+    if (event.target.className === 'item') {
+      map = event.target.innerText
+    } else {
+      map = event.target.parentElement.querySelector('.selected').innerText
+    }
+
+    props.updateDraftMap(map)
+  }
+
   return(
     <Grid.Row>
       <Segment raised color ="violet">
@@ -25,7 +37,7 @@ const Maps = (props) => {
               search
               selection
               options={allMaps()}
-              onChange={(event) => {props.updateDraftMap(event.target.parentElement.querySelector('.selected').innerText)}}
+              onChange={handleChange}
             />
           </Form.Field>
         </Form>
