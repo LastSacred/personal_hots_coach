@@ -1,4 +1,12 @@
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
+
+const rootReducer = combineReducers({
+  site: siteReducer,
+  draft: draftReducer
+})
+
+export default createStore(rootReducer,
+ window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 function rootReducer(
   state = {
@@ -71,6 +79,3 @@ function rootReducer(
       return state
   }
 }
-
-export default createStore(rootReducer,
- window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
