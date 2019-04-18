@@ -8,6 +8,7 @@ import allMapsReducer from './reducers/allMapsReducer'
 import allHeroesReducer from './reducers/allHeroesReducer'
 import pickListReducer from './reducers/pickListReducer'
 import draftReducer from './reducers/draftReducer'
+import settingsReducer from './reducers/settingsReducer'
 
 const rootReducer = combineReducers({
   loggedIn: loggedInReducer,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   allMaps: allMapsReducer,
   allHeroes: allHeroesReducer,
   pickList: pickListReducer,
-  draft: draftReducer
+  draft: draftReducer,
+  settings: settingsReducer
 })
 
 export default createStore(rootReducer,

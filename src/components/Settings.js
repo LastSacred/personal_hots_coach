@@ -8,9 +8,6 @@ import PickList from './PickList'
 
 class Settings extends Component {
   state = {
-    battletag: null,
-    auto_roster: false,
-    heroes: [],
     addRemove: [null, '']
   }
 
@@ -39,7 +36,7 @@ class Settings extends Component {
     getHeroes().then(heroes => this.props.updateHeroes(heroes))
 
     getUser().then(user => {
-      this.setState(user)
+      this.props.updateSettings(user)
     })
 
     postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
@@ -48,11 +45,17 @@ class Settings extends Component {
   handleAutoRosterClick = (event) => {
     this.props.updatePickList([])
 
-    this.setState({auto_roster: !this.state.auto_roster}, () => {
-      updateUser({auto_roster: this.state.auto_roster}).then(() => {
-        postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
-      })
+    updateUser({auto_roster: !this.props.autoRoster}).then(() => {
+      postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
     })
+
+    this.props.toggleAutoRoster()
+
+    // this.setState({auto_roster: !this.state.auto_roster}, () => {
+    //   updateUser({auto_roster: this.state.auto_roster}).then(() => {
+    //     postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
+    //   })
+    // })
   }
 
   handleAddRemoveHeroChange = (event) => {
@@ -68,13 +71,12 @@ class Settings extends Component {
 
     if (this.state.addRemove[0] === "Add") {
       const addedHero = this.props.allHeroes.find(hero => hero.name === this.state.addRemove[1])
-      newRoster = [...this.state.heroes, addedHero]
+      newRoster = [...this.props.heroes, addedHero]
     } else {
-      newRoster = this.state.heroes.filter(hero => hero.name !== this.state.addRemove[1])
+      newRoster = this.props.heroes.filter(hero => hero.name !== this.state.addRemove[1])
     }
 
     this.setState({
-      heroes: newRoster,
       addRemove: [null, '']
     })
 
@@ -83,10 +85,12 @@ class Settings extends Component {
     updateUser({roster: newRosterNames}).then(() => {
       postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
     })
+
+    this.props.updateSettingsHeroes(newRoster)
   }
 
   showAddRemoveHeroes = () => {
-    if (this.state.auto_roster) {
+    if (this.props.autoRoster) {
       return null
     } else {
       return (
@@ -126,7 +130,7 @@ class Settings extends Component {
         <h1>{this.props.loggedIn}</h1>
         <div style={{margin: '50px 20px 50px 20px'}}>
           <h2>Battletag</h2>
-          <div>{this.state.battletag}</div>
+          <div>{this.props.battletag}</div>
         </div>
         <div style={{margin: '50px 20px 50px 20px'}}>
           <Segment color="violet">
@@ -135,7 +139,7 @@ class Settings extends Component {
               <Radio
                 toggle
                 label="Auto Select Roster Heroes"
-                checked={this.state.auto_roster}
+                checked={this.props.autoRoster}
                 onClick={this.handleAutoRosterClick}
               />
               {this.showAddRemoveHeroes()}
@@ -152,14 +156,20 @@ const mapStateToProps = state => {
   return {
     loggedIn: state.loggedIn,
     pickList: state.pickList,
-    allHeroes: state.allHeroes
+    allHeroes: state.allHeroes,
+    battletag: state.settings.battletag,
+    autoRoster: state.settings.auto_roster,
+    heroes: state.settings.heroes
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     updateHeroes: (heroes) => dispatch({ type: 'UPDATE_HEROES', heroes: heroes }),
-    updatePickList: (pickList) => dispatch({ type: 'UPDATE_PICKLIST', pickList: pickList })
+    updatePickList: (pickList) => dispatch({ type: 'UPDATE_PICKLIST', pickList: pickList }),
+    updateSettings: (user) => dispatch({ type: 'UPDATE_SETTINGS', user: user }),
+    toggleAutoRoster: () => dispatch({ type: 'TOGGLE_AUTO_ROSTER' }),
+    updateSettingsHeroes: (heroes) => dispatch({ type: 'UPDATE_SETTINGS_HEROES', heroes: heroes })
   }
 }
 
