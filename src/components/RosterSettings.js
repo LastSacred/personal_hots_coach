@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Radio, Segment } from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react'
 
-import { postDraft, postMatches, updateUser } from '../services/api.js'
+import { postDraft, postMatches } from '../services/api.js'
 import PickList from './PickList'
 import AddRemoveHeroes from './AddRemoveHeroes'
+import AutoRosterToggle from './AutoRosterToggle'
 
 class RosterSettings extends Component {
   draft = () => {
@@ -21,14 +22,8 @@ class RosterSettings extends Component {
     postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
   }
 
-  handleAutoRosterClick = (event) => {
-    this.props.updatePickList([])
-
-    updateUser({auto_roster: !this.props.autoRoster}).then(() => {
-      postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
-    })
-
-    this.props.toggleAutoRoster()
+  componentDidUpdate() {
+    postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
   }
 
   render() {
@@ -36,12 +31,7 @@ class RosterSettings extends Component {
       <Segment color="violet">
         <h2>Roster</h2>
         <div>
-          <Radio
-            toggle
-            label="Auto Select Roster Heroes"
-            checked={this.props.autoRoster}
-            onClick={this.handleAutoRosterClick}
-          />
+          <AutoRosterToggle />
           {this.props.autoRoster ? null : <AddRemoveHeroes />}
         </div>
         <PickList />
@@ -59,8 +49,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updatePickList: (pickList) => dispatch({ type: 'UPDATE_PICKLIST', pickList: pickList }),
-    toggleAutoRoster: () => dispatch({ type: 'TOGGLE_AUTO_ROSTER' })
+    updatePickList: (pickList) => dispatch({ type: 'UPDATE_PICKLIST', pickList: pickList })
   }
 }
 
