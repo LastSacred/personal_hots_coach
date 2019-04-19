@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { Container, Radio, Dropdown, Form, Button, Segment } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 
-import { getUser, postDraft, postMatches, updateUser, getHeroes } from '../services/api.js'
+import { getUser } from '../services/api.js'
 import RosterSettings from './RosterSettings'
 
 class Settings extends Component {
