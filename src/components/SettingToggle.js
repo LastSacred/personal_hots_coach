@@ -4,7 +4,7 @@ import { Radio } from 'semantic-ui-react'
 
 import { postDraft, updateUser } from '../services/api.js'
 
-const AutoRosterToggle = (props) => {
+const SettingToggle = (props) => {
   const draft = () => {
     return {
       map: '',
@@ -14,40 +14,42 @@ const AutoRosterToggle = (props) => {
     }
   }
 
-  const handleAutoRosterClick = (event) => {
+  const handleClick = (event) => {
     props.updatePickList([])
 
-    updateUser({auto_roster: !props.autoRoster}).then(() => {
+    updateUser({[props.setting.name]: !props.settings[props.setting.name]}).then(() => {
       postDraft(draft()).then(draft => props.updatePickList(draft.pick_list))
     })
 
-    props.toggleAutoRoster()
+    props.toggleSetting(props.setting.name)
   }
 
   return (
-    <Radio
-      toggle
-      label="Auto Select Roster Heroes"
-      checked={props.autoRoster}
-      onClick={handleAutoRosterClick}
-    />
+    <div style={{margin:'15px 0px'}}>
+      <Radio
+        toggle
+        label={props.setting.label}
+        checked={props.settings[props.setting.name]}
+        onClick={handleClick}
+      />
+    </div>
   )
 }
 
 const mapStateToProps = state => {
   return {
-    autoRoster: state.settings.auto_roster
+    settings: state.settings
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     updatePickList: (pickList) => dispatch({ type: 'UPDATE_PICKLIST', pickList: pickList }),
-    toggleAutoRoster: () => dispatch({ type: 'TOGGLE_AUTO_ROSTER' })
+    toggleSetting: (setting) => dispatch({ type: 'TOGGLE_SETTING', setting: setting })
   }
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AutoRosterToggle)
+)(SettingToggle)

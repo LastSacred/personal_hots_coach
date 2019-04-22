@@ -5,6 +5,7 @@ import { Container } from 'semantic-ui-react'
 
 import { getUser } from '../services/api.js'
 import RosterSettings from './RosterSettings'
+import TrackedMatchesSettings from './TrackedMatchesSettings'
 
 class Settings extends Component {
   componentDidMount() {
@@ -21,6 +22,9 @@ class Settings extends Component {
         <div style={{margin: '50px 20px 50px 20px'}}>
           <h2>Battletag</h2>
           <div>{this.props.battletag}</div>
+        </div>
+        <div style={{margin: '50px 20px 50px 20px'}}>
+          <TrackedMatchesSettings />
         </div>
         <div style={{margin: '50px 20px 50px 20px'}}>
           <RosterSettings />

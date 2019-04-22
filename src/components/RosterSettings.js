@@ -5,7 +5,7 @@ import { Segment } from 'semantic-ui-react'
 import { postDraft, postMatches } from '../services/api.js'
 import PickList from './PickList'
 import AddRemoveHeroes from './AddRemoveHeroes'
-import AutoRosterToggle from './AutoRosterToggle'
+import SettingToggle from './SettingToggle'
 
 class RosterSettings extends Component {
   draft = () => {
@@ -27,7 +27,7 @@ class RosterSettings extends Component {
       <Segment color="violet">
         <h2>Roster</h2>
         <div>
-          <AutoRosterToggle />
+          <SettingToggle setting={{label: 'Auto Select Roster Heroes', name: 'auto_roster'}} />
           {this.props.autoRoster ? null : <AddRemoveHeroes />}
         </div>
         <PickList />
