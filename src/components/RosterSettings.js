@@ -22,10 +22,6 @@ class RosterSettings extends Component {
     postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
   }
 
-  componentDidUpdate() {
-    postDraft(this.draft()).then(draft => this.props.updatePickList(draft.pick_list))
-  }
-
   render() {
     return(
       <Segment color="violet">

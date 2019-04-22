@@ -3,6 +3,9 @@ function settingsReducer(
     battletag: null,
     auto_roster: false,
     heroes: [],
+    track_quick_match: false,
+    track_unranked_match: false,
+    track_ranked_match: false
   },
   action
 ) {
