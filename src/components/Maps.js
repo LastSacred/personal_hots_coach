@@ -16,10 +16,10 @@ const Maps = (props) => {
   const handleChange = (event) => {
     let map
 
-    if (event.target.className === 'item') {
-      map = event.target.innerText
-    } else {
+    if (event.target.className === 'search') {
       map = event.target.parentElement.querySelector('.selected').innerText
+    } else {
+      map = event.target.innerText
     }
 
     props.updateDraftMap(map)
