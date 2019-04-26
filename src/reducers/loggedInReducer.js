@@ -4,7 +4,7 @@ function loggedInReducer(
 ) {
   switch (action.type) {
     case 'UPDATE_LOGIN':
-      return localStorage.username
+      return localStorage.username || null
 
     default:
       return state
