@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container, Grid } from 'semantic-ui-react'
-
-import HomeButtons from './HomeButtons'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { Container, Grid, Segment } from 'semantic-ui-react'
 
 const Home = (props) => {
   const showNextSteps = () => {
@@ -46,8 +46,11 @@ const Home = (props) => {
         The Heroes of the Storm companion that uses your historical match data to make draft pick suggestions.
       </p>
       <Grid style={{marginTop: '100px'}}>
-      <HomeButtons />
+      {showNextSteps()}
       </Grid>
+      <h2>
+        Note: this is a demo version. Performance quality is not guaranteed. If you would like to clone your own verson of the app you can get it from <a href="https://github.com/LastSacred/personal_hots_coach">Github</a>
+      </h2>
       <p style={{width: '300px', position: 'absolute', bottom: '50px', left: '50%', marginLeft: '-150px'}}>
         Personal HotS Coach uses <a href="http://hotsapi.net">HotsApi</a>
       </p>
@@ -55,4 +58,10 @@ const Home = (props) => {
   )
 }
 
-export default Home
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.loggedIn
+  }
+}
+
+export default connect(mapStateToProps)(Home)

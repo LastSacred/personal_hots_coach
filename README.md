@@ -27,6 +27,12 @@
 
   The import process uses http://hotsapi.net/ to parse replays.
 
+## Created By
+
+  Arthur Torres (LastSacred)
+
+  arthurtorres002@gmail.com
+
 
 
 

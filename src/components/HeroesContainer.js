@@ -5,8 +5,17 @@ import { Grid, Segment } from 'semantic-ui-react'
 import Hero from './Hero'
 
 const HeroesContainer = (props) => {
+  const filteredHeroes = () => {
+    return props.allHeroes.filter(hero => {
+      const banNames = props.bans.map(hero => hero.name)
+      const withHeroNames = props.withHeroes.map(hero => hero.name)
+      const againstHeroNames = props.againstHeroes.map(hero => hero.name)
+      return !banNames.concat(withHeroNames).concat(againstHeroNames).includes(hero.name)
+    })
+  }
+
   const showHeroes = () => {
-    return props.allHeroes.map(hero => {
+    return filteredHeroes().map(hero => {
       return <Hero key={hero.id} hero={hero} parent={"HeroesContainer"} />
     })
   }
@@ -22,7 +31,10 @@ const HeroesContainer = (props) => {
 
 const mapStateToProps = state => {
   return {
-    allHeroes: state.allHeroes
+    allHeroes: state.allHeroes,
+    bans: state.draft.bans,
+    withHeroes: state.draft.with_heroes,
+    againstHeroes: state.draft.against_heroes
   }
 }
 
