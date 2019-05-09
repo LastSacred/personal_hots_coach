@@ -4,40 +4,6 @@ import { Container, Grid } from 'semantic-ui-react'
 import HomeButtons from './HomeButtons'
 
 const Home = (props) => {
-  const showNextSteps = () => {
-    if (props.loggedIn) {
-      return (
-        <Grid.Row columns={2}>
-          <Grid.Column>
-            <Link to='/upload'>
-              <Segment style={{maxWidth: '350px', marginLeft: 'auto'}}>
-                <h3 style={{lineHeight: '100px'}}>Upload replay files</h3>
-              </Segment>
-            </Link>
-          </Grid.Column>
-          <Grid.Column>
-            <Link to='/draft'>
-              <Segment style={{maxWidth: '350px'}}>
-                <h3 style={{lineHeight: '100px'}}>Start a draft</h3>
-              </Segment>
-            </Link>
-          </Grid.Column>
-        </Grid.Row>
-      )
-    } else {
-      return (
-        <Grid.Row column={1}>
-          <Grid.Column>
-            <Segment style={{maxWidth: '350px', margin: 'auto'}}>
-              <Link to='/login'>
-                <h3 style={{lineHeight: '100px'}}>Log in to start</h3>
-              </Link>
-            </Segment>
-          </Grid.Column>
-        </Grid.Row>
-      )
-    }
-  }
 
   return(
     <Container>
