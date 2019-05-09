@@ -38,7 +38,7 @@ const Home = (props) => {
       )
     }
   }
-  // TODO: refactor methods like showNextSteps as a seperate component
+
   return(
     <Container>
       <h1 style={{fontSize: '2.5em'}}>Welcome to Personal HotS Coach</h1>
