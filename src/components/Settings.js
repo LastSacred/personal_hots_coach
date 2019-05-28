@@ -3,13 +3,13 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Container } from 'semantic-ui-react'
 
-import { getUser } from '../services/api.js'
+import { get } from '../services/api.js'
 import RosterSettings from './RosterSettings'
 import TrackedMatchesSettings from './TrackedMatchesSettings'
 
 class Settings extends Component {
   componentDidMount() {
-    getUser().then(user => {
+    get('users', 'token').then(user => {
       this.props.updateSettings(user)
     })
   }

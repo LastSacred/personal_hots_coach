@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Container, Form } from 'semantic-ui-react'
-import { getHeroes } from '../services/api'
+import { get } from '../services/api'
 
 const HeroesFilter = (props) => {
   const filterHeroes = (value) => {
-    getHeroes().then(heroes => {
+    get('heroes').then(heroes => {
       heroes = heroes.filter(hero => {
         const name = hero.name.toLowerCase().replace("ú", "u").replace(/[^A-Z0-9]/ig, "")
         const searchTerm = value.toLowerCase().replace(/[^A-Z0-9]/ig, "")

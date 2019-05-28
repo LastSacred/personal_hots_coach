@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Image, Button } from 'semantic-ui-react'
 
 import emptyIcon from '../assets/empty.jpg'
-import { getHeroes } from '../services/api'
+import { get } from '../services/api'
 
 const Hero = (props) => {
   const hero = props.hero || {
@@ -29,7 +29,7 @@ const Hero = (props) => {
       default:
     }
 
-    getHeroes().then(heroes => props.updateHeroes(heroes))
+    get('heroes').then(heroes => props.updateHeroes(heroes))
   }
 
   const handleButtonClick = (event) => {
@@ -47,7 +47,7 @@ const Hero = (props) => {
     }
 
     props.selectHero(null)
-    getHeroes().then(heroes => props.updateHeroes(heroes))
+    get('heroes').then(heroes => props.updateHeroes(heroes))
     props.clearFilterValue()
   }
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Button, Form, Segment, Container, Message, Loader } from 'semantic-ui-react'
 
-import { postReplays, getReplays, postMatches } from '../services/api'
+import { postReplays, get, postMatches } from '../services/api'
 
 class Upload extends Component {
   state = {
@@ -16,7 +16,7 @@ class Upload extends Component {
 
     this.setState({message: ['loading', null, null]})
 
-    getReplays().then(replayFiles => {
+    get('replay_files', 'token').then(replayFiles => {
       files = [...files].filter(file => !replayFiles.find(replayFile => replayFile.name === file.name))
 
       for (let i = 0; i < files.length; i++) {

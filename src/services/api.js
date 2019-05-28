@@ -1,5 +1,11 @@
 const BackendUrl = process.env.REACT_APP_URL
 
+const get = (target, token = null) => {
+  if (token) token = { headers: { 'Access-Token': localStorage.token } }
+
+  return fetch(BackendUrl + target, token).then(res => res.json())
+}
+
 const login = (params) => {
   return fetch(BackendUrl + 'login', {
     method: 'POST',
@@ -10,14 +16,6 @@ const login = (params) => {
       user: params
     })
   }).then(res => res.json())
-}
-
-const getMaps = () => {
-  return fetch(BackendUrl + 'maps').then(res => res.json())
-}
-
-const getHeroes = () => {
-  return fetch(BackendUrl + 'heroes').then(res => res.json())
 }
 
 const postDraft = (draft) => {
@@ -35,14 +33,6 @@ const postDraft = (draft) => {
         against_heroes: draft.against_heroes.map(hero => hero.name)
       }
     })
-  }).then(res => res.json())
-}
-
-const getUser = () => {
-  return fetch(BackendUrl + 'users', {
-    headers: {
-      'Access-Token': localStorage.token
-    }
   }).then(res => res.json())
 }
 
@@ -71,14 +61,6 @@ const updateUser = (params) => {
   }).then(res => res.json())
 }
 
-const getReplays = () => {
-  return fetch(BackendUrl + 'replay_files', {
-    headers: {
-      'Access-Token': localStorage.token
-    }
-  }).then(res => res.json())
-}
-
 const postReplays = (files) => {
   return fetch(BackendUrl + 'replay_files', {
     method: 'POST',
@@ -98,4 +80,4 @@ const postMatches = () => {
   })
 }
 
-export { login, getMaps, getHeroes, postDraft, getUser, updateUser, postUsers, postReplays, getReplays, postMatches }
+export { get, login, postDraft, updateUser, postUsers, postReplays, postMatches }

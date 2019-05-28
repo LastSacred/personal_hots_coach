@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Dropdown, Form, Button } from 'semantic-ui-react'
 
-import { postDraft, updateUser, getHeroes } from '../services/api.js'
+import { postDraft, updateUser, get } from '../services/api.js'
 
 class AddRemoveHeroes extends Component {
   state = {
@@ -29,7 +29,7 @@ class AddRemoveHeroes extends Component {
   }
 
   componentDidMount() {
-    getHeroes().then(heroes => this.props.updateHeroes(heroes))
+    get('heroes').then(heroes => this.props.updateHeroes(heroes))
   }
 
   handleAddRemoveButtonClick = (event) => {
