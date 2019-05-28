@@ -29,7 +29,7 @@ const Hero = (props) => {
       default:
     }
 
-    get('heroes').then(heroes => props.updateHeroes(heroes))
+    get('heroes').then(props.updateHeroes)
   }
 
   const handleButtonClick = (event) => {
@@ -47,7 +47,7 @@ const Hero = (props) => {
     }
 
     props.selectHero(null)
-    get('heroes').then(heroes => props.updateHeroes(heroes))
+    get('heroes').then(props.updateHeroes)
     props.clearFilterValue()
   }
 

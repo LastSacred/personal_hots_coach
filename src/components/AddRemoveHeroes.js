@@ -29,7 +29,7 @@ class AddRemoveHeroes extends Component {
   }
 
   componentDidMount() {
-    get('heroes').then(heroes => this.props.updateHeroes(heroes))
+    get('heroes').then(this.props.updateHeroes)
   }
 
   handleAddRemoveButtonClick = (event) => {

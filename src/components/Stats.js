@@ -3,12 +3,14 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Container } from 'semantic-ui-react'
 
+import HeroSetsContainer from './HeroSetsContainer'
+
 const Stats = (props) => {
   return(
     <Container>
       {props.loggedIn ? null : <Redirect to="/login" />}
       <h1>Stats</h1>
-      <h2>Coming Soon</h2>
+      <HeroSetsContainer />
     </Container>
   )
 }

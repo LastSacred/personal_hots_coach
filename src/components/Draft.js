@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { get, postDraft, postMatches } from '../services/api'
 import { Grid } from 'semantic-ui-react'
+
+import { get, postDraft, postMatches } from '../services/api'
 
 import Maps from './Maps'
 import Heroes from './Heroes'
@@ -14,9 +15,9 @@ import PickList from './PickList'
 class Draft extends Component {
   componentDidMount() {
     if (!this.props.loggedIn) return
-    get('maps').then(maps => this.props.updateMaps(maps))
+    get('maps').then(this.props.updateMaps)
 
-    get('heroes').then(heroes => this.props.updateHeroes(heroes))
+    get('heroes').then(this.props.updateHeroes)
 
     postMatches()
 

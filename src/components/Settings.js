@@ -9,9 +9,7 @@ import TrackedMatchesSettings from './TrackedMatchesSettings'
 
 class Settings extends Component {
   componentDidMount() {
-    get('users', 'token').then(user => {
-      this.props.updateSettings(user)
-    })
+    get('users', 'token').then(this.props.updateSettings)
   }
 
   render() {

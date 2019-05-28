@@ -1,27 +1,16 @@
-function settingsReducer(
+function statSetReducer(
   state = {
-    battletag: null,
-    auto_roster: false,
-    heroes: [],
-    track_quick_match: false,
-    track_unranked_draft: false,
-    track_ranked_draft: false
+    hero_sets: []
   },
   action
 ) {
   switch (action.type) {
-    case 'UPDATE_SETTINGS':
-      return action.user
-
-    case 'TOGGLE_SETTING':
-      return { ...state, [action.setting]: !state[action.setting] }
-
-    case 'UPDATE_SETTINGS_HEROES':
-      return { ...state, heroes: action.heroes }
+    case 'UPDATE_STATSET':
+      return action.statSet
 
     default:
       return state
   }
 }
 
-export default settingsReducer
+export default statSetReducer
