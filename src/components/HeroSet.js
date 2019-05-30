@@ -6,30 +6,20 @@ const HeroSet = (props) => {
   return (
     <Segment raised color ="violet">
       <Grid>
-        <Grid.Row columns={5}>
+        <Grid.Row columns={7}>
           <Grid.Column>
             <Image
-              style={{margin: 'auto'}}
               bordered
               src={props.heroSet.hero.icon_url}
-              size='small'
+              size='tiny'
               rounded
             />
-            <h2>{props.heroSet.hero.name}</h2>
+            <h2 style={{textAlign: 'left'}}>{props.heroSet.hero.name}</h2>
           </Grid.Column>
           <Grid.Column>
-            <h3 style={{marginTop: '35px'}}>Score</h3>
-            <div style={{fontSize: '5em', marginTop: '40px'}}>{props.heroSet.score}</div>
-          </Grid.Column>
-          <Grid.Column>
-            <h3 style={{marginTop: '35px'}}>Win%</h3>
-            <div style={{fontSize: '5em', marginTop: '40px'}}>{props.heroSet.win_percent}</div>
-          </Grid.Column>
-          <Grid.Column>
-            <h3 style={{marginTop: '35px'}}>Matches</h3>
-            <div style={{fontSize: '5em', marginTop: '40px'}}>{props.heroSet.match_count}</div>
-          </Grid.Column>
-          <Grid.Column>
+            <h3 style={{textAlign: 'left'}}>Score: {props.heroSet.score}</h3>
+            <h3 style={{textAlign: 'left'}}>Win%: {props.heroSet.win_percent}</h3>
+            <h3 style={{textAlign: 'left'}}>Matches: {props.heroSet.match_count}</h3>
           </Grid.Column>
         </Grid.Row>
       </Grid>
