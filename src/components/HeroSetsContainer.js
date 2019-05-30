@@ -4,6 +4,8 @@ import { Container, Loader } from 'semantic-ui-react'
 
 import { get } from '../services/api'
 
+import HeroSet from './HeroSet'
+
 class HeroSetsContainer extends Component {
 
    componentDidMount() {
@@ -14,9 +16,7 @@ class HeroSetsContainer extends Component {
      if (this.props.heroSets.length === 0) return <Loader active inline='centered' />
 
      return this.props.heroSets.map(heroSet => {
-       return (
-         <div>{heroSet.hero.name}</div>
-       )
+       return <HeroSet key={heroSet.hero.id} heroSet={heroSet} />
      })
    }
 
